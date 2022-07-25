@@ -23,6 +23,8 @@
   - [/check](docs/check)
   - [/blacklist](docs/blacklist)
   - [/utc](docs/utc)
+
+## [FAQ](docs/faq)
   
 ## Donations
 If you want to buy me a beer here you can
