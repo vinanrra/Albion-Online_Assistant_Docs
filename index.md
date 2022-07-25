@@ -13,7 +13,9 @@
  - Read EVERYTHING to avoid any errors
  - If you have any problems [open a github ticket](https://github.com/vinanrra/Albion-Online_Assistant_Docs/issues/new) or contact me using the [Discord support server](https://discord.gg/wxaqGTZWXS)
 
-## Usage
+## [Quick setup](docs/quick-setup)
+
+## Commands
   - [/setup](docs/setup)
   - [/guild](docs/guild)
   - [/alliance](docs/alliance)
