@@ -41,9 +41,11 @@ If you need to edit a guild, you will need to run again `/guild add`
 ### - Remove a guild
 
 To remove a guild use `/guild remove`, the bot will need some parameters.
+
 ![image](https://user-images.githubusercontent.com/4247187/180802858-3ea86815-fa89-40df-9bda-09c9b521c8d4.png)
 
 Send the command and the bot will show a resume of all your settings if everything it's correct click "Confirm" if not "Cancel"
+
 ![image](https://user-images.githubusercontent.com/4247187/180802961-6e7490ef-26e7-4d63-8730-96a329a086e5.png)
 
 
