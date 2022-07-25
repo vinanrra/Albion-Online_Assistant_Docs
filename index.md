@@ -15,12 +15,12 @@
 
 ## Usage
   - [/setup](docs/setup/index.md)
-  - [/guild](docs/guild.md)
-  - [/alliance](docs/alliance.md)
-  - [/register](docs/register.md)
-  - [/check](docs/check.md)
-  - [/blacklist](docs/blacklist.md)
-  - [/utc](docs/utc.md)
+  - [/guild](docs/guild/index.md)
+  - [/alliance](docs/alliance/index.md)
+  - [/register](docs/register/index.md)
+  - [/check](docs/check/index.md)
+  - [/blacklist](docs/blacklist/index.md)
+  - [/utc](docs/utc/index.md)
   
 ## Donations
 If you want to buy me a beer here you can
