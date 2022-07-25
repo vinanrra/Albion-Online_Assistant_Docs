@@ -14,13 +14,13 @@
  - If you have any problems [open a github ticket](https://github.com/vinanrra/Albion-Online_Assistant_Docs/issues/new) or contact me using the [Discord support server](https://discord.gg/wxaqGTZWXS)
 
 ## Usage
-  - [/setup](docs/setup/index.md)
-  - [/guild](docs/guild/index.md)
-  - [/alliance](docs/alliance/index.md)
-  - [/register](docs/register/index.md)
-  - [/check](docs/check/index.md)
-  - [/blacklist](docs/blacklist/index.md)
-  - [/utc](docs/utc/index.md)
+  - [/setup](docs/setup)
+  - [/guild](docs/guild)
+  - [/alliance](docs/alliance)
+  - [/register](docs/register)
+  - [/check](docs/check)
+  - [/blacklist](docs/blacklist)
+  - [/utc](docs/utc)
   
 ## Donations
 If you want to buy me a beer here you can
