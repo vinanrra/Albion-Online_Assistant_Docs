@@ -3,7 +3,7 @@
 ## - Setup the bot
 
 First you will need to configure the bot using: `/setup config`, the bot will need some parameters.
-If you need info about any parameter check [/setup docs](docs/setup/index.md)
+If you need info about any parameter check [/setup docs](/docs/setup/index.md)
 
 ![image](https://user-images.githubusercontent.com/4247187/180800612-4bc50cbf-aa15-41d2-afd4-f95e3892172c.png)
 
@@ -24,7 +24,7 @@ If you need to edit a settings, you will need to run again `/setup config`
 
 ## - Manage guilds
 
-If you need info about any parameter check [/guild docs](docs/guild/index.md)
+If you need info about any parameter check [/guild docs](/docs/guild/index.md)
 
 ### - Add/Modify a guild
 
@@ -52,11 +52,11 @@ Send the command and the bot will show a resume of all your settings if everythi
 ## - Configure an alliance
 
 Same as guild but using `/alliance`
-If you need info about any parameter check [/alliance docs](docs/alliance/index.md)
+If you need info about any parameter check [/alliance docs](/docs/alliance/index.md)
 
 ## - Blacklist
 
-If you need info about any parameter check [/blacklist docs](docs/blacklist/index.md)
+If you need info about any parameter check [/blacklist docs](/docs/blacklist/index.md)
 
 ## - Manage blacklist
 
