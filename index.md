@@ -25,7 +25,9 @@
   - [/utc](docs/utc)
 
 ## [FAQ](docs/faq)
-  
+
+## [Support Server](https://discord.gg/wxaqGTZWXS)
+
 ## Donations
 If you want to buy me a beer here you can
 
