@@ -22,14 +22,53 @@ Send the command and the bot will show a resume of all your settings if everythi
 
 If you need to edit a settings, you will need to run again `/setup config`
 
-## - Configure a guild
+## - Manage guilds
 
-WIP
+If you need info about any parameter check [/guild docs](docs/guild/index.md)
+
+### - Add/Modify a guild
+
+First you will need to configure the guild using: `/guild add`, the bot will need some parameters.
+
+![image](https://user-images.githubusercontent.com/4247187/180802319-a0769c2a-c697-4959-8860-0c9488a228d9.png)
+
+Send the command and the bot will show a resume of all your settings if everything it's correct click "Confirm" if not "Cancel"
+
+![image](https://user-images.githubusercontent.com/4247187/180802496-86eeccc9-581c-4f94-87c7-9d5b36986c62.png)
+
+If you need to edit a guild, you will need to run again `/guild add`
+
+### - Remove a guild
+
+To remove a guild use `/guild remove`, the bot will need some parameters.
+![image](https://user-images.githubusercontent.com/4247187/180802858-3ea86815-fa89-40df-9bda-09c9b521c8d4.png)
+
+Send the command and the bot will show a resume of all your settings if everything it's correct click "Confirm" if not "Cancel"
+![image](https://user-images.githubusercontent.com/4247187/180802961-6e7490ef-26e7-4d63-8730-96a329a086e5.png)
+
 
 ## - Configure an alliance
 
-WIP
+Same as guild but using `/alliance`
+If you need info about any parameter check [/alliance docs](docs/alliance/index.md)
 
 ## - Blacklist
 
-WIP
+If you need info about any parameter check [/blacklist docs](docs/blacklist/index.md)
+
+## - Manage blacklist
+
+### Add/Modify
+
+First you will need to add the blacklist user/guild/alliance using: `/blacklist add`, the bot will need some parameters.
+IMPORTANT choose the correct type (User, Guild or Alliance) if wrong the bot will show an error
+
+![image](https://user-images.githubusercontent.com/4247187/180803539-b9b10f82-e186-4867-8352-bdd1ffd14dbb.png)
+
+Send the command and the bot will show a resume of all your settings if everything it's correct click "Confirm" if not "Cancel"
+![image](https://user-images.githubusercontent.com/4247187/180803863-c5c7c051-4e06-4181-92be-589df3290c5f.png)
+
+
+### Remove
+
+![image](https://user-images.githubusercontent.com/4247187/180803921-9d0d07ab-3320-4abe-b320-20595a96b747.png)
