@@ -14,7 +14,7 @@
  - If you have any problems [open a github ticket](https://github.com/vinanrra/Albion-Online_Assistant_Docs/issues/new) or contact me using the [Discord support server](https://discord.gg/wxaqGTZWXS)
 
 ## Usage
-  - [/setup](docs/setup.md)
+  - [/setup](docs/setup/index.md)
   - [/guild](docs/guild.md)
   - [/alliance](docs/alliance.md)
   - [/register](docs/register.md)
