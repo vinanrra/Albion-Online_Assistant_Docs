@@ -1,5 +1,15 @@
 # Quick setup
 
+## - Pre-configuration
+
+Put the bot role above the roles that it's gonna be able to give, check image.
+
+![image](https://user-images.githubusercontent.com/4247187/181045362-c5ccb68e-bd9f-4d93-bb92-5d743750376a.png)
+
+The bot will be able to give the following roles:
+ - Member
+ - Test
+
 ## - Setup the bot
 
 First you will need to configure the bot using: `/setup config`, the bot will need some parameters.
