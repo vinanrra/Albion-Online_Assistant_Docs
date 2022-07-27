@@ -2,6 +2,8 @@
 
 ## - Pre-configuration
 
+### Permissions
+
 Put the bot role above the roles that it's gonna be able to give, check image.
 
 ![image](https://user-images.githubusercontent.com/4247187/181045362-c5ccb68e-bd9f-4d93-bb92-5d743750376a.png)
@@ -9,6 +11,48 @@ Put the bot role above the roles that it's gonna be able to give, check image.
 The bot will be able to give the following roles:
  - Member
  - Test
+
+### Allow roles to use /slash commands
+
+#### Bot configuration
+Go to Server Settings > Integrations > Albion Assistant
+
+![image](https://user-images.githubusercontent.com/4247187/181276275-6ba7837b-9fc0-4e08-b23f-2e7715b35cff.png)
+
+![image](https://user-images.githubusercontent.com/4247187/181276405-63950209-fbd5-4f28-ba0c-91b344bd8bbe.png)
+
+##### Per role
+At Roles & Members you will be able which roles will be able to use Albion Assistant /slash commands
+
+If you want to allow to use slash commands everywhere leave everywhere green
+
+![image](https://user-images.githubusercontent.com/4247187/181276950-a6d8ab0a-6503-46c6-a198-e42c76bc4447.png)
+
+If you want to restrict the usage to only some roles change @everyone to red and click `Add roles or Members`, add the roles you want to personalize and allow them like the photo:
+
+![image](https://user-images.githubusercontent.com/4247187/181277247-9db3c0dc-893b-436d-9a5e-bccbdf7a6e50.png)
+
+##### Per channel
+
+At Channels, if you leave # All channels green, roles with permissions will be able to use the bot at every channel
+
+![image](https://user-images.githubusercontent.com/4247187/181277603-2fe55463-5abb-42db-b59a-6d5f47ca1de8.png)
+
+If you want to only allow some channels, put # All channels to red and click `Add channels`
+
+![image](https://user-images.githubusercontent.com/4247187/181277773-e2550041-2fbf-409d-b429-78b4e94f8483.png)
+
+Like this i will allow only to use Albion Assistant /slash commands at #spam-bot
+
+#### Allow roles to use /slash commands
+
+Go to Server Settings > Roles > Select the role
+
+![image](https://user-images.githubusercontent.com/4247187/181276275-6ba7837b-9fc0-4e08-b23f-2e7715b35cff.png)
+
+And allow the role to use /slash commands
+
+![image](https://user-images.githubusercontent.com/4247187/181278372-327f27d4-f680-49fa-a214-e76b81f59089.png)
 
 ## - Setup the bot
 
