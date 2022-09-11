@@ -7,7 +7,7 @@ This command will allow you to configure/edit bot settings
 | Parameter | Function |
 | --- | --- |
 | `public` | Allow everyone to register (usefull for Disords servers like Faction, HCE, Avas...), if guild/alliance isn't configured tags will be get from Albion API |
-| `public_role` | Role to give if server it's public, if guild/alliance are configured too will give those roles too |
+| `public_role` | If you intend for your server to have public sections or channels open to the public such as a faction server then put the public role here, public must be enable |
 | `admin_role` | Role that will be able to fully configure the bot |
 | `mod_role` | Role that will be able to manage users (list registered users/guild/alliance, blacklist and manually register add/remove users) |
 | `globalBlacklistWarning` | WIP - Enable this if you want to show a notification if the user was blacklisted at other Discord |
