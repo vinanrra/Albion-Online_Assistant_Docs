@@ -1,33 +1,54 @@
 # /alliance
 
+The /alliance command is used for managing alliances in your Discord bot. It includes several subcommands:
+
 ## /alliance add
 
-This command will configure a alliance and setup the role and tag to give to users from the alliance configured
+This command allows admins to add an alliance to the bot's configuration, specifying the region, alliance ID, role, and tag.
+
+### Usage:
+
+`/alliance add [region] [alliance_id] [alliance_role] [alliance_tag]`
 
 | Parameter | Function |
 | --- | --- |
-| `albionAllianceId`| Alliance ID from Albion Online, you get the ID using /check alliance |
-| `allianceRole` | Role to give to users from this alliance |
-| `allianceTag` | Tag to show before name |
+| `region`           | The Albion Online server region                                                           |
+| `albionAllianceId` | The unique ID of the alliance in Albion Online, you can get this from [AlbionKillboard](https://albiononline.com/killboard) |
+| `allianceRole`     | The Discord role associated with this alliance.                                           |
+| `allianceTag`      | The tag of the alliance (maximum 7 characters).                                           |
 
 ## /alliance remove
 
-This command will remove a configured guild
+This command is used to remove an alliance from the bot's configuration. It requires the region and alliance ID.
+
+### Usage:
+
+`/alliance remove [region] [alliance_id]`
 
 | Parameter | Function |
 | --- | --- |
-| `albionAllianceId`| Alliance ID from Albion Online, you get the ID using /check alliance |
+| `region`           | The Albion Online server region                                                           |
+| `albionAllianceId` | The unique ID of the alliance in Albion Online, you can get this from [AlbionKillboard](https://albiononline.com/killboard) |
 
 
 ## /alliance show
 
-This command will show the settings from a configured guild
+### Usage:
+
+`/alliance show [region] [alliance_id]`
+
+This command displays the details of a specific alliance, including its ID, name, role, and tag.
 
 | Parameter | Function |
 | --- | --- |
-| `albionAllianceId`| Alliance ID from Albion Online, you get the ID using /check alliance |
+| `region`           | The Albion Online server region                                                           |
+| `albionAllianceId`| The unique ID of the alliance in Albion Online, you can get this from [AlbionKillboard](https://albiononline.com/killboard) |
 
 
 ## /alliance list
 
-This command will list all Discord configure alliances
+This command lists all alliances that have been configured in the bot, showing their names and IDs.
+
+### Usage:
+
+`/alliance list [region]`
