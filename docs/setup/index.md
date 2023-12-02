@@ -1,8 +1,10 @@
 # /setup
 
+The /setup command is the main command for configuring your Discord bot. It has several subcommands:
+
 ## /setup config
 
-This command will allow you to configure/edit bot settings
+This command allows the admin to configure various settings of the bot, including public access, role assignments, blacklist settings, and nickname customization.
 
 | Parameter | Function |
 | --- | --- |
@@ -22,8 +24,8 @@ This command will allow you to configure/edit bot settings
 
 ## /setup show
 
-This command will allow you to show bot settings if configured
+This command displays the current configuration of the bot, including settings like public server status, roles, blacklist settings, and nickname editing options.
 
 ## /setup delete
 
-This command will allow you you to remove all your Discord data from the bot
+This command will remove all the settings and data related to the bot from the server. It should be used with caution.
