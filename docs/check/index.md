@@ -1,17 +1,29 @@
 # /check
 
+The `/check` command provides information about players and guilds in Albion Online.
+
 ## /check user
 
-This command will show all the from from an user
+This command retrieves information about an Albion Online player.
+
+### Usage:
+
+`/check user [region] [albion_nick]`
 
 | Parameter | Function |
 | --- | --- |
-| `albion_nick`| Albion Online ingame name |
+| `region`     | The Albion Online server region |
+| `albion_nick`| The username of the Albion Online player to search. |
 
 ## /check guild
 
-This command will show all the from from a guild
+This command retrieves information about an Albion Online guild.
+
+### Usage:
+
+`/check guild [region] [albion_guild_name]`
 
 | Parameter | Function |
 | --- | --- |
-| `albion_guild_name`| Albion Online guild name |
+| `region`           | The Albion Online server region |
+| `albion_guild_name`| The name of the Albion Online guild to search. |
