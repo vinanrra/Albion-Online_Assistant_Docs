@@ -1,34 +1,27 @@
-# Welcome to Albion Online Assistant Docs
+# 📖 Albion Bot Documentation
 
-## Features:
- - Automatically give roles and nickname when they register using the bot
- - Blacklist users, guilds and/or alliances to avoid them to register in your discord server
- - Configure each guild or alliance to register, you can even set the registration public and everyone will be able to register
- - Check users, guilds and/or alliances to get all the info from Albion
- - Get utc time
- - Automatically purge (roles and nickname) users/guilds when they leave the configured guilds or alliances.
- - And more incoming with each update
+Welcome to the documentation for the **Albion Bot**! This bot is designed to help you and your guild manage Albion Online activities, including registration, mapping Avalon roads, tracking statistics, and organizing parties.
 
-## Information
- - Read EVERYTHING to avoid any errors
- - If you have any problems [open a github ticket](https://github.com/vinanrra/Albion-Online_Assistant_Docs/issues/new) or contact me using the [Discord support server](https://discord.gg/wxaqGTZWXS)
+## 🚀 Getting Started
 
-## [Quick setup](docs/quick-setup)
+To get the most out of the bot, follow these steps:
 
-## Commands
-  - [/setup](docs/setup)
-  - [/guild](docs/guild)
-  - [/alliance](docs/alliance)
-  - [/register](docs/register)
-  - [/check](docs/check)
-  - [/blacklist](docs/blacklist)
-  - [/utc](docs/utc)
+1.  **Invite the Bot:** Make sure the bot is in your server with appropriate permissions.
+2.  **Set Language:** Use `/language` to set the bot's language for your server.
+3.  **Setup Registration:** Admins should use `/albion_setup config` to enable member registration.
+4.  **Register:** Users can then use `/albion_register start` to link their Albion Online account.
 
-## [FAQ](docs/faq)
+## 📚 Feature Guides
 
-## [Support Server](https://discord.gg/wxaqGTZWXS)
+Explore our detailed guides for each feature:
 
-## Donations
-If you want to buy me a beer here you can
+*   **[👤 Registration & Whitelist](registration.md)**: How to link your account and get guild/alliance roles.
+*   **[📊 Player & Guild Statistics](statistics.md)**: How to check and compare stats for players, guilds, and alliances.
+*   **[🗺️ Avalon Maps](maps.md)**: Using the Avalon road mapping system and boss guides.
+*   **[🎉 Party Management](party.md)**: Organizing group signups and using templates.
+*   **[🛡️ Management & Configuration](management.md)**: Administrator commands for server setup and blacklisting.
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=25XWMUHD8NZHG&source=url" rel="PayPal">![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)
+---
+
+## ℹ️ Interactive Help
+You can always use the `/help` command inside Discord to see an interactive menu with all available commands.
