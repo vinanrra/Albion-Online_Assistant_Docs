@@ -21,6 +21,15 @@ Whitelist guilds and alliances to automatically give members roles and tags.
 *   **Guilds:** `/albion_guild add` / `/albion_guild list` / `/albion_guild remove`
 *   **Alliances:** `/albion_alliance add` / `/albion_alliance list` / `/albion_alliance remove`
 
+## 🛠️ User Management
+
+Manage registered users directly without requiring them to perform actions.
+
+*   **List:** `/albion_manage list` - View all registrations with optional member/guild filters.
+*   **Update:** `/albion_manage update` - Force a data refresh and role/nick sync for a user.
+*   **Delete:** `/albion_manage delete` - Manually unregister a user.
+*   **Register:** `/albion_manage register` - Register a user on their behalf using Nickname or Player ID.
+
 ## 🚫 Blacklist
 
 Prevent specific users, guilds, or alliances from interacting with the bot.

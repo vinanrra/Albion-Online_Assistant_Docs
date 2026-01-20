@@ -15,6 +15,7 @@ To get the most out of the bot, follow these steps:
 
 Explore our detailed guides for each feature:
 
+*   **[⚙️ Complete Setup Guide](setup_guide.md)**: **Start here!** How to configure the bot and whitelist your first guild.
 *   **[👤 Registration & Whitelist](registration.md)**: How to link your account and get guild/alliance roles.
 *   **[📊 Player & Guild Statistics](statistics.md)**: How to check and compare stats for players, guilds, and alliances.
 *   **[🗺️ Avalon Maps](maps.md)**: Using the Avalon road mapping system and boss guides.
