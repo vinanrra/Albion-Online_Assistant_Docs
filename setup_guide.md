@@ -10,15 +10,33 @@ Use the command `/albion_setup config` to define the core behavior of the bot. T
 
 | Option | Description |
 | :--- | :--- |
-| **`public`** | **Allow everyone to register?**<br>• **Yes:** Anyone can link their Albion account, even if they aren't in a whitelisted guild.<br>• **No:** (Recommended) Only members of guilds or alliances you've specifically whitelisted can register. |
-| **`public_role`** | **Public Role**<br>The Discord role given to users who register if `public` is set to Yes. Highly recommended for controlling permissions. |
+| **`public`** | **Allow everyone to register?**<br>• **Yes:** Anyone can link their Albion account. They will receive the `public_role` (if configured) even if they aren't in a whitelisted guild/alliance.<br>• **No:** Only members of guilds or alliances you've specifically whitelisted can register. |
+| **`public_role`** | **Public Role**<br>The Discord role given to users who register if `public` is set to **Yes**. This helps identify registered "guest" users. |
 | **`edit_nick`** | **Change nickname?**<br>If enabled, the bot will automatically change the user's Discord nickname to match their Albion character name (including optional tags). |
 | **`nick_tag_order`** | **Tag Order**<br>Determines if the Alliance tag or Guild tag appears first. (e.g., `[ALLY][GUILD] Name` vs `[GUILD][ALLY] Name`). |
 | **`nick_ally_tag`** | **Alliance Tag Display**<br>Choose who can see the alliance tag in nicknames (Everyone, Only members, or Don't show). |
 | **`nick_ally_tag_length`** | **Alliance Tag Length**<br>The maximum characters for the alliance tag (1-7). |
 | **`nick_guild_tag`** | **Guild Tag Display**<br>Choose who can see the guild tag in nicknames. |
 | **`nick_guild_tag_length`** | **Guild Tag Length**<br>The maximum characters for the guild tag (1-7). |
-| **`purge_users`** | **Purge Roles on Leave?**<br>If enabled, the bot will remove the assigned roles if the user leaves the whitelisted Albion guild or character. |
+| **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot will periodically check users. If they leave a whitelisted guild, their roles (including the Public Role) will be removed, and their nickname will be reset. |
+
+---
+
+## ⚡ The "Public" vs "Purge" Interaction
+
+It is important to understand how these two settings interact when automated maintenance is active.
+
+> [!WARNING]
+> If **`purge_users`** is **ENABLED** and you have at least one guild whitelisted (via `/albion_guild add`), the bot will purge any user who is NOT in one of those whitelisted guilds.
+
+**What this means for Public users:**
+If you enable **`public`** registration but also enable **`purge_users`**, a user who is not in a whitelisted guild will be allowed to register initially. However, during the next automated cleanup cycle, the bot will see that they are not on any whitelist and will **PURGE** them (removing their roles and resetting their nickname).
+
+**Recommended Configuration:**
+- **For Private/Guild Servers:** `public: No`, `purge_users: Yes`.
+- **For Open Servers (Community):** `public: Yes`, `purge_users: No`.
+- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes` (But note that guests will need a whitelisted guild to stay "verified").
+
 
 ---
 

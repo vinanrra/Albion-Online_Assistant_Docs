@@ -6,7 +6,7 @@ Administrator-only commands to set up the bot and moderate the server.
 
 ### 1. Set Language
 Use `/language` to select the bot's interface language.
-*   **Supported:** English, Spanish, French, Italian, Portuguese (PT & BR), Russian.
+*   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de).
 
 ### 2. Configure Registration
 Use `/albion_setup config` to define how registration works.
