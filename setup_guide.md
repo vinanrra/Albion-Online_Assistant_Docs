@@ -18,7 +18,9 @@ Use the command `/albion_setup config` to define the core behavior of the bot. T
 | **`nick_ally_tag_length`** | **Alliance Tag Length**<br>The maximum characters for the alliance tag (1-7). |
 | **`nick_guild_tag`** | **Guild Tag Display**<br>Choose who can see the guild tag in nicknames. |
 | **`nick_guild_tag_length`** | **Guild Tag Length**<br>The maximum characters for the guild tag (1-7). |
-| **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot will periodically check users. If they leave a whitelisted guild, their roles (including the Public Role) will be removed, and their nickname will be reset. |
+| **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot will periodically check users and maintain their roles/nicknames based on their current guild status. |
+| **`purge_mode`** | **Purge Behavior**<br>• **Full:** Strip all roles and reset nickname if user is not on any whitelist.<br>• **Soft:** Only remove specifically whitelisted roles, keeping the Public role and nickname. |
+| **`purge_log_channel`** | **Log Channel**<br>A text channel where the bot will send detailed logs of every update/purge action taken, and a summary report after each cycle. |
 
 ---
 
@@ -33,9 +35,11 @@ It is important to understand how these two settings interact when automated mai
 If you enable **`public`** registration but also enable **`purge_users`**, a user who is not in a whitelisted guild will be allowed to register initially. However, during the next automated cleanup cycle, the bot will see that they are not on any whitelist and will **PURGE** them (removing their roles and resetting their nickname).
 
 **Recommended Configuration:**
-- **For Private/Guild Servers:** `public: No`, `purge_users: Yes`.
+- **For Private/Guild Servers:** `public: No`, `purge_users: Yes`, `purge_mode: Full`.
 - **For Open Servers (Community):** `public: Yes`, `purge_users: No`.
-- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes` (But note that guests will need a whitelisted guild to stay "verified").
+- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes`, `purge_mode: Soft` (This keeps guests verified but updates their roles).
+
+For a deep dive into the automated cleanup logic, see the [Purge System Guide](file:///home/vinanrra/Documents/Github/Albion-Online_Assistant_Docs/purge_system.md).
 
 
 ---

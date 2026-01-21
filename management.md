@@ -14,6 +14,12 @@ Use `/albion_setup config` to define how registration works.
 *   **Nickname Sync:** Automatically change Discord nicknames to match Albion character names.
 *   **Tag Display:** Customize how [GUILD] and [ALLIANCE] tags appear in nicknames.
 
+### 3. Automated Maintenance (Purge)
+Define how the bot should handle users who are no longer in whitelisted guilds.
+*   **Purge Modes:** Choose between **Full** (complete removal) or **Soft** (remove only specific roles).
+*   **Log Channel:** Set a channel to receive real-time action logs and cycle reports.
+*   For more details, see the [Purge System Guide](file:///home/vinanrra/Documents/Github/Albion-Online_Assistant_Docs/purge_system.md).
+
 ## 📋 Whitelisting
 
 Whitelist guilds and alliances to automatically give members roles and tags.
