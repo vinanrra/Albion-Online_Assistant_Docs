@@ -21,6 +21,7 @@ Use the command `/albion_setup config` to define the core behavior of the bot. T
 | **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot will periodically check users and maintain their roles/nicknames based on their current guild status. |
 | **`purge_mode`** | **Purge Behavior**<br>• **Full:** Strip all roles and reset nickname if user is not on any whitelist.<br>• **Soft:** Only remove specifically whitelisted roles, keeping the Public role and nickname. |
 | **`purge_log_channel`** | **Log Channel**<br>A text channel where the bot will send detailed logs of every update/purge action taken, and a summary report after each cycle. |
+| **`role_conflict`** | **Role Priority Mode**<br>How to handle users in both a whitelisted guild AND alliance:<br>• **Additive:** Give both roles.<br>• **Guild Only:** Prioritize guild role.<br>• **Alliance Only:** Prioritize alliance role. |
 
 ---
 

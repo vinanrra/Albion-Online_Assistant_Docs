@@ -23,3 +23,6 @@ If your guild or alliance is on the server's **whitelist**, you will automatical
 
 > [!NOTE]
 > If you change guilds, you may need to update your registration or wait for the automatic sync to occur.
+
+> [!IMPORTANT]
+> **Multiple Roles**: If you belong to both a whitelisted guild and a whitelisted alliance, the roles you receive depend on the server's **Role Priority Mode** configuration.
