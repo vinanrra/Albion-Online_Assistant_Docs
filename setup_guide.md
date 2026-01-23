@@ -59,6 +59,9 @@ Use `/albion_guild add` to add a guild to your whitelist.
 ### 🤝 Whitelisting an Alliance
 Similar to guilds, use `/albion_alliance add`. Members of any guild within the whitelisted alliance will receive the specified role and tag.
 
+> [!NOTE]
+> **Safe Cleanup:** Removing a guild or alliance will trigger an automated prompt asking if you want to perform a cleanup of the associated users (stripping roles and unregistering them).
+
 ---
 
 ## 3. User Registration Process

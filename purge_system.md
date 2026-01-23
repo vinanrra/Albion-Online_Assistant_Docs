@@ -68,5 +68,17 @@ At the end of every audit cycle, the bot sends a summary embed:
 
 ---
 
+## ⚡ Manual Cleanup (Instant)
+
+While the automated purge system runs periodically, the bot also provides an **instant cleanup option** when you manually remove a guild or alliance from the whitelist.
+
+- **Trigger**: Using `/albion_guild remove` or `/albion_alliance remove`.
+- **The Prompt**: The bot will immediately ask if you want to:
+    1. **Remove Users**: Permanently unregister all users from that entity and strip their roles.
+    2. **Keep Users**: Remove the entity from the whitelist but keep all current members registered.
+- **Log**: These manual actions are also recorded in your `purge_log_channel`.
+
+---
+
 > [!CAUTION]
 > **Permissions**: For the purge system to work, the Bot's role must be higher in the Discord settings than all the roles it is trying to manage. It also needs the **Manage Nicknames** permission.

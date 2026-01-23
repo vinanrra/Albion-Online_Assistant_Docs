@@ -6,7 +6,7 @@ Administrator-only commands to set up the bot and moderate the server.
 
 ### 1. Set Language
 Use `/language` to select the bot's interface language.
-*   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de).
+*   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de), Korean (ko), Chinese (zh-cn), Vietnamese (vi).
 
 ### 2. Configure Registration
 Use `/albion_setup config` to define how registration works.
@@ -27,6 +27,9 @@ Whitelist guilds and alliances to automatically give members roles and tags.
 
 *   **Guilds:** `/albion_guild add` / `/albion_guild list` / `/albion_guild remove`
 *   **Alliances:** `/albion_alliance add` / `/albion_alliance list` / `/albion_alliance remove`
+
+> [!NOTE]
+> **Automated Cleanup:** When you remove a guild or alliance from the whitelist, the bot will automatically prompt you to decide whether to remove or keep the users registered under that entity.
 
 ## 🛠️ User Management
 
