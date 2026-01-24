@@ -83,8 +83,5 @@ Once you have configured the bot and whitelisted at least one guild or alliance,
 > [!TIP]
 > **Role Hierarchy:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. If the bot's role is too low, it will fail to update users.
 
-> [!IMPORTANT]
-> **One Account Policy:** By default, the bot enforces consistency. A user cannot register with one character on one server and a different character on another server within the same region. This prevents "spy" accounts.
-
 > [!NOTE]
 > **Manual Overrides:** Use the `/albion_manage` commands if you need to manually register someone, force an update, or remove a registration without the user's involvement.
