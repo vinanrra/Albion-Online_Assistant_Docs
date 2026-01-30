@@ -44,9 +44,14 @@ Manage registered users directly without requiring them to perform actions.
 
 Prevent specific users, guilds, or alliances from interacting with the bot.
 
-*   **Add:** `/albion_blacklist add`
-*   **Remove:** `/albion_blacklist remove`
-*   **List:** `/albion_blacklist list`
+*   **Add:** `/albion_blacklist add` - Search for a character, guild, or alliance to block. Optionally provide a `discord_id` and `reason`.
+*   **Edit:** `/albion_blacklist edit` - Update an existing blacklist entry's reason or associated Discord member.
+*   **Remove:** `/albion_blacklist remove` - Unblock an entity.
+*   **List:** `/albion_blacklist list` - See all current blocks for a region.
+*   **Show:** `/albion_blacklist show` - View detailed information about a specific entry, including who added it and when.
+
+> [!NOTE]
+> When adding a blacklist entry, you can now provide an optional **Discord ID**. If provided, the bot will show the linked user in the blacklist details and it serves as additional metadata for administrators.
 
 ## 🗺️ Map Editing
 
