@@ -9,8 +9,8 @@ The bot runs a background cycle (every few hours, as configured by the bot owner
 1.  **API Audit**: The bot queries the Albion Online API to check the user's current Guild and Alliance.
 2.  **Whitelist Comparison**: It compares this data against your server's `/albion_guild` and `/albion_alliance` whitelists.
 3.  **Action Determination**:
-    *   **Level 1: Update**: If the user moved from one whitelisted guild to another, the bot updates their roles and nickname tags immediately.
-    *   **Level 2: Purge**: If the user is no longer in any whitelisted entity, the bot triggers a purge based on your configured **Purge Mode**.
+    *   **Level 1: Update**: If the user moved from one whitelisted guild/alliance to another, the bot updates their roles and nickname tags immediately.
+    *   **Level 2: Purge**: If the user is no longer in any whitelisted entity (neither guild nor alliance), the bot triggers a purge based on your configured **Purge Mode**.
 
 > [!TIP]
 > **Role Priority**: During updates, the bot respects your **Role Conflict Mode** setting. If a user is in both a whitelisted guild and alliance, the bot will filter roles based on your priority (Additive, Guild Only, or Alliance Only).

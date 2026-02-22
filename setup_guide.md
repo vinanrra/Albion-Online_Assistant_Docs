@@ -30,17 +30,17 @@ Use the command `/albion_setup config` to define the core behavior of the bot. T
 It is important to understand how these two settings interact when automated maintenance is active.
 
 > [!WARNING]
-> If **`purge_users`** is **ENABLED** and you have at least one guild whitelisted (via `/albion_guild add`), the bot will purge any user who is NOT in one of those whitelisted guilds.
+> If **`purge_users`** is **ENABLED** and you have whitelists configured (via `/albion_guild add` or `/albion_alliance add`), the bot will purge any user who is NOT in any of those whitelisted entities.
 
 **What this means for Public users:**
-If you enable **`public`** registration but also enable **`purge_users`**, a user who is not in a whitelisted guild will be allowed to register initially. However, during the next automated cleanup cycle, the bot will see that they are not on any whitelist and will **PURGE** them (removing their roles and resetting their nickname).
+If you enable **`public`** registration but also enable **`purge_users`**, a user who is not in a whitelisted guild or alliance will be allowed to register initially. However, during the next automated cleanup cycle, the bot will see that they are not on any whitelist and will **PURGE** them (removing their roles and resetting their nickname).
 
 **Recommended Configuration:**
 - **For Private/Guild Servers:** `public: No`, `purge_users: Yes`, `purge_mode: Full`.
 - **For Open Servers (Community):** `public: Yes`, `purge_users: No`.
-- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes`, `purge_mode: Soft` (This keeps guests verified but updates their roles).
+- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes`, `purge_mode: Soft` (This keeps guests verified but updates their roles based on guild/alliance membership).
 
-For a deep dive into the automated cleanup logic, see the [Purge System Guide](file:///home/vinanrra/Documents/Github/Albion-Online_Assistant_Docs/purge_system.md).
+For a deep dive into the automated cleanup logic, see the [Purge System Guide](purge_system.md).
 
 
 ---
