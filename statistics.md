@@ -28,3 +28,8 @@ You can also check statistics for entire alliances.
 
 > [!TIP]
 > Use the region selector to ensure you are searching the correct server (Americas, Europe, or Asia).
+
+---
+
+[⬅️ Back to Home](index.md)
+

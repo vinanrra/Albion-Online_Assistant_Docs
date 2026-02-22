@@ -19,10 +19,15 @@ To use many of the bot's features, you need to register your Albion Online accou
 
 ## 🛡️ Whitelist & Roles
 
-If your guild or alliance is on the server's **whitelist**, you will automatically receive the assigned roles and nickname tags (e.g., `[GUILD] Nickname`) upon registration.
+If your guild or alliance is on the server's **whitelist**, you will automatically receive the assigned roles and nickname tags (e.g., `[GUILD] Nickname`) upon registration. Note that tags are limited to a maximum of **7 characters**.
 
 > [!NOTE]
 > If you change guilds, you may need to update your registration or wait for the automatic sync to occur.
 
 > [!IMPORTANT]
 > **Multiple Roles**: If you belong to both a whitelisted guild and a whitelisted alliance, the roles you receive depend on the server's **Role Priority Mode** configuration.
+
+---
+
+[⬅️ Back to Home](index.md)
+

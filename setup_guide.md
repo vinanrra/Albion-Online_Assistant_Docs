@@ -54,7 +54,7 @@ Use `/albion_guild add` to add a guild to your whitelist.
 1.  **Search:** Enter the name of the Albion Online guild.
 2.  **Select Region:** Choose the region (Americas, Europe, or Asia).
 3.  **Assign Role:** Select the Discord role that members of this guild should receive upon registration.
-4.  **Tag:** Enter the 1-7 character tag to display in their nickname (e.g., `TC` for The Coalition).
+4.  **Tag:** Enter the tag to display in their nickname (max 7 characters, e.g., `TC` for The Coalition).
 
 ### 🤝 Whitelisting an Alliance
 Similar to guilds, use `/albion_alliance add`. Members of any guild within the whitelisted alliance will receive the specified role and tag.
@@ -81,7 +81,12 @@ Once you have configured the bot and whitelisted at least one guild or alliance,
 ## ℹ️ Pro Tips for Administrators
 
 > [!TIP]
-> **Role Hierarchy:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. If the bot's role is too low, it will fail to update users.
+> **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. The user executing administrative commands must also have the **Manage Roles** permission.
 
 > [!NOTE]
 > **Manual Overrides:** Use the `/albion_manage` commands if you need to manually register someone, force an update, or remove a registration without the user's involvement.
+
+---
+
+[⬅️ Back to Home](index.md)
+

@@ -1,12 +1,12 @@
 # 🛡️ Management & Configuration
 
-Administrator-only commands to set up the bot and moderate the server.
+Moderation commands and administrative settings. Most of these commands require the **Manage Roles** permission.
 
 ## ⚙️ Initial Setup
 
 ### 1. Set Language
 Use `/language` to select the bot's interface language.
-*   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de), Korean (ko), Chinese (zh-cn), Vietnamese (vi).
+*   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de), Korean (ko), Chinese (zh-cn), Vietnamese (vi), Danish (da).
 
 ### 2. Configure Registration
 Use `/albion_setup config` to define how registration works.
@@ -25,8 +25,11 @@ Define how the bot should handle users who are no longer in whitelisted guilds.
 
 Whitelist guilds and alliances to automatically give members roles and tags.
 
-*   **Guilds:** `/albion_guild add` / `/albion_guild list` / `/albion_guild remove`
-*   **Alliances:** `/albion_alliance add` / `/albion_alliance list` / `/albion_alliance remove`
+*   **Guilds:** `/albion_guild add` / `/albion_guild list` / `/albion_guild remove` / `/albion_guild edit`
+*   **Alliances:** `/albion_alliance add` / `/albion_alliance list` / `/albion_alliance remove` / `/albion_alliance edit`
+
+> [!IMPORTANT]
+> **Tag Length Limit:** Guild and Alliance tags are limited to a maximum of **7 characters**.
 
 > [!NOTE]
 > **Automated Cleanup:** When you remove a guild or alliance from the whitelist, the bot will automatically prompt you to decide whether to remove or keep the users registered under that entity.
@@ -61,5 +64,10 @@ Administrators can update resource levels for Avalon maps to keep information cu
 
 ---
 
+[⬅️ Back to Home](index.md)
+
+
+---
+
 > [!WARNING]
-> These commands require **Administrator** permissions in the Discord server.
+> These commands require **Manage Roles** permissions in the Discord server (some may still require Administrator depending on Discord's internal override).

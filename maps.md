@@ -29,3 +29,8 @@ The bot includes detailed guides for Avalonian Bosses. These guides cover mechan
 
 > [!IMPORTANT]
 > Map resource levels can be updated by administrators using `/ava edit`. Help keep the map data accurate for your guild!
+
+---
+
+[⬅️ Back to Home](index.md)
+

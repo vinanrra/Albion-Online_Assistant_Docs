@@ -82,3 +82,8 @@ While the automated purge system runs periodically, the bot also provides an **i
 
 > [!CAUTION]
 > **Permissions**: For the purge system to work, the Bot's role must be higher in the Discord settings than all the roles it is trying to manage. It also needs the **Manage Nicknames** permission.
+
+---
+
+[⬅️ Back to Home](index.md)
+
