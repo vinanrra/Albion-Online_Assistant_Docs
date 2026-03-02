@@ -29,7 +29,7 @@ Use the command `/albion_setup config` to define the core behavior of the bot. T
 
 It is important to understand how these two settings interact when automated maintenance is active.
 
-> [!WARNING]
+> ⚠️
 > If **`purge_users`** is **ENABLED** and you have whitelists configured (via `/albion_guild add` or `/albion_alliance add`), the bot will purge any user who is NOT in any of those whitelisted entities.
 
 **What this means for Public users:**
@@ -59,7 +59,7 @@ Use `/albion_guild add` to add a guild to your whitelist.
 ### 🤝 Whitelisting an Alliance
 Similar to guilds, use `/albion_alliance add`. Members of any guild within the whitelisted alliance will receive the specified role and tag.
 
-> [!NOTE]
+> ℹ️
 > **Safe Cleanup:** Removing a guild or alliance will trigger an automated prompt asking if you want to perform a cleanup of the associated users (stripping roles and unregistering them).
 
 ---
@@ -80,10 +80,9 @@ Once you have configured the bot and whitelisted at least one guild or alliance,
 
 ## ℹ️ Pro Tips for Administrators
 
-> [!TIP]
-> **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. The user executing administrative commands must also have the **Manage Roles** permission.
+> ⭐ **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. The user executing administrative commands must also have the **Manage Roles** permission.
 
-> [!NOTE]
+> ℹ️
 > **Manual Overrides:** Use the `/albion_manage` commands if you need to manually register someone, force an update, or remove a registration without the user's involvement.
 
 ---

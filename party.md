@@ -35,8 +35,7 @@ Save common party setups (e.g., "Standard 7-man Raid") to quickly load them late
 
 ---
 
-> [!TIP]
-> Use the **Party Chat** thread for all communication related to the event!
+> ⭐ Use the **Party Chat** thread for all communication related to the event!
 
 ---
 

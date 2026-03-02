@@ -6,6 +6,7 @@ Moderation commands and administrative settings. Most of these commands require 
 
 ### 1. Set Language
 Use `/language` to select the bot's interface language.
+*   **Permission:** Requires **Administrator** permission.
 *   **Supported:** English (en), Spanish (es), French (fr), Italian (it), Portuguese (pt), Brazilian Portuguese (pt-br), Russian (ru), Turkish (tr), German (de), Korean (ko), Chinese (zh-cn), Vietnamese (vi), Danish (da).
 
 ### 2. Configure Registration
@@ -23,29 +24,32 @@ Define how the bot should handle users who are no longer in whitelisted guilds.
 
 ## 📋 Whitelisting
 
-Whitelist guilds and alliances to automatically give members roles and tags.
+Whitelist guilds and alliances to automatically give members roles and tags. Commands in this group require the **Manage Roles** permission.
 
 *   **Guilds:** `/albion_guild add` / `/albion_guild list` / `/albion_guild remove` / `/albion_guild edit`
 *   **Alliances:** `/albion_alliance add` / `/albion_alliance list` / `/albion_alliance remove` / `/albion_alliance edit`
 
-> [!IMPORTANT]
-> **Tag Length Limit:** Guild and Alliance tags are limited to a maximum of **7 characters**.
+> ℹ️ **Tag Length Limit:** Guild and Alliance tags are limited to a maximum of **7 characters**.
 
-> [!NOTE]
-> **Automated Cleanup:** When you remove a guild or alliance from the whitelist, the bot will automatically prompt you to decide whether to remove or keep the users registered under that entity.
+> ℹ️ **Automated Cleanup:** When you remove a guild or alliance from the whitelist, the bot will automatically prompt you to decide whether to remove or keep the users registered under that entity.
 
 ## 🛠️ User Management
 
-Manage registered users directly without requiring them to perform actions.
+Manage registered users directly without requiring them to perform actions. These commands require the **Manage Roles** permission.
 
-*   **List:** `/albion_manage list` - View all registrations with optional member/guild filters.
-*   **Update:** `/albion_manage update` - Force a data refresh and role/nick sync for a user.
-*   **Delete:** `/albion_manage delete` - Manually unregister a user.
-*   **Register:** `/albion_manage register` - Register a user on their behalf using Nickname or Player ID.
+*   **List:** `/albion_manage list [region] [member] [albion_guild]`
+    *   **Description:** View all registrations for a specific Albion region.
+    *   **Filters:** You can filter results by a specific Discord **member** or an **Albion guild name**.
+*   **Update:** `/albion_manage update [region] [member]`
+    *   **Description:** Force a data refresh for a specific user. This will re-check their current Albion guild/alliance, update their roles, and sync their nickname if enabled.
+*   **Delete:** `/albion_manage delete [region] [member]`
+    *   **Description:** Manually unregister a user from the bot. This removes their linked Albion data and any roles assigned by the bot.
+*   **Register:** `/albion_manage register [region] [member] [albion_player]`
+    *   **Description:** Register a user on their behalf. You can provide the **Albion Nickname** or the **Player ID**. If multiple players match a nickname, a selection menu will appear.
 
 ## 🚫 Blacklist
 
-Prevent specific users, guilds, or alliances from interacting with the bot.
+Prevent specific users, guilds, or alliances from interacting with the bot. Commands in this group require the **Manage Roles** permission.
 
 *   **Add:** `/albion_blacklist add` - Search for a character, guild, or alliance to block. Optionally provide a `discord_id` and `reason`.
 *   **Edit:** `/albion_blacklist edit` - Update an existing blacklist entry's reason or associated Discord member.
@@ -53,7 +57,7 @@ Prevent specific users, guilds, or alliances from interacting with the bot.
 *   **List:** `/albion_blacklist list` - See all current blocks for a region.
 *   **Show:** `/albion_blacklist show` - View detailed information about a specific entry, including who added it and when.
 
-> [!NOTE]
+> ℹ️
 > When adding a blacklist entry, you can now provide an optional **Discord ID**. If provided, the bot will show the linked user in the blacklist details and it serves as additional metadata for administrators.
 
 ## 🗺️ Map Editing
@@ -61,13 +65,40 @@ Prevent specific users, guilds, or alliances from interacting with the bot.
 Administrators can update resource levels for Avalon maps to keep information current.
 
 *   **Command:** `/ava edit map_name:MapName ...`
+    *   **Permission:** Restricted to an **Authorized ID List**.
+
+## 🔐 Permissions & Access
+
+To ensure security and proper management, the bot follows these permission rules. Use the table below to determine which role or permission you need to execute specific commands.
+
+### Permissions Table
+
+| Command Group | Required Discord Permission | Notes |
+| :--- | :--- | :--- |
+| `/language` | **Administrator** | Changes the bot's interface language for the entire server. |
+| `/albion_setup` | **Manage Roles** | Configures registration, nickname sync, and maintenance. |
+| `/albion_guild` | **Manage Roles** | Manages the whitelisted Albion guilds. |
+| `/albion_alliance` | **Manage Roles** | Manages the whitelisted Albion alliances. |
+| `/albion_manage` | **Manage Roles** | Administrative control over registered users. |
+| `/albion_blacklist`| **Manage Roles** | Manages the server-wide blacklist. |
+| `/ava edit` | **Authorized ID List** | Restricted to specific users defined in the bot config (`ALLOWED_EDIT_IDS`). |
+| `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID. |
+
+### Key Requirements
+
+1.  **Server Administration:** Commands requiring **Manage Roles** or **Administrator** are generally accessible to the Server Owner and any user with those specific permissions.
+2.  **Guild Context:** All administrative and configuration commands must be used within a Discord Server (Guild). They will not work in Direct Messages (DMs).
+3.  **Role Hierarchy:** For the bot to manage roles or nicknames, the **"Albion Assistant"** role must be positioned **higher** than the roles it is trying to assign or the users it is trying to manage in the Discord Server Settings.
+4.  **Authorized Map Editors:** The `/ava edit` command is not tied to Discord permissions but to a hardcoded list of Discord User IDs in the bot's environment variables.
+
+---
+
+> ⚠️ If a command fails despite you having the correct permissions, check the **Integration Settings** in your Server Settings to ensure Discord hasn't overridden the bot's default command permissions.
+
+---
+
+> ⚠️ These commands require **Manage Roles** permissions in the Discord server (some may still require Administrator depending on Discord's internal override).
 
 ---
 
 [⬅️ Back to Home](index.md)
-
-
----
-
-> [!WARNING]
-> These commands require **Manage Roles** permissions in the Discord server (some may still require Administrator depending on Discord's internal override).
