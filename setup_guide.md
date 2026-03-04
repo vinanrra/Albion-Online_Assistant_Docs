@@ -81,6 +81,8 @@ Once you have configured the bot and whitelisted at least one guild or alliance,
 ## ℹ️ Pro Tips for Administrators
 
 > ⭐ **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. The user executing administrative commands must also have the **Manage Roles** permission.
+>
+> ⚠️ **Admin & Owner Limitations:** Due to Discord's security model, the bot **cannot** change nicknames or manage roles for the **Server Owner** or any user with **Administrator** permissions. This is a built-in protection to prevent bots from locking out or modifying server owners and high-privileged accounts.
 
 > ℹ️
 > **Manual Overrides:** Use the `/albion_manage` commands if you need to manually register someone, force an update, or remove a registration without the user's involvement.

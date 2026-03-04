@@ -89,7 +89,8 @@ To ensure security and proper management, the bot follows these permission rules
 1.  **Server Administration:** Commands requiring **Manage Roles** or **Administrator** are generally accessible to the Server Owner and any user with those specific permissions.
 2.  **Guild Context:** All administrative and configuration commands must be used within a Discord Server (Guild). They will not work in Direct Messages (DMs).
 3.  **Role Hierarchy:** For the bot to manage roles or nicknames, the **"Albion Assistant"** role must be positioned **higher** than the roles it is trying to assign or the users it is trying to manage in the Discord Server Settings.
-4.  **Authorized Map Editors:** The `/ava edit` command is not tied to Discord permissions but to a hardcoded list of Discord User IDs in the bot's environment variables.
+4.  **Admin & Owner Accounts:** The bot **will fail** to add/remove roles or change nicknames for the **Server Owner** or users with **Administrator** permissions. This is due to Discord's built-in security hierarchy, which prevents any user (including bots) from modifying accounts with higher or maximum administrative privileges.
+5.  **Authorized Map Editors:** The `/ava edit` command is not tied to Discord permissions but to a hardcoded list of Discord User IDs in the bot's environment variables.
 
 ---
 
