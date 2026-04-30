@@ -62,6 +62,13 @@ Similar to guilds, use `/albion_alliance add`. Members of any guild within the w
 > ℹ️
 > **Safe Cleanup:** Removing a guild or alliance will trigger an automated prompt asking if you want to perform a cleanup of the associated users (stripping roles and unregistering them).
 
+### ⚔️ Setting up Killboard (Optional)
+If you want to track your guild's kills and deaths in a specific channel:
+1.  Use `/albion_killboard channel` to set the destination.
+2.  Use `/albion_killboard add` to add your Guild or Alliance.
+
+For more details, see the [Killboard Guide](killboard.md).
+
 ---
 
 ## 3. User Registration Process

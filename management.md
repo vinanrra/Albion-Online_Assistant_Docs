@@ -22,6 +22,14 @@ Define how the bot should handle users who are no longer in whitelisted guilds.
 *   **Log Channel:** Set a channel to receive real-time action logs and cycle reports.
 *   For more details, see the [Purge System Guide](file:///home/vinanrra/Documents/Github/Albion-Online_Assistant_Docs/purge_system.md).
 
+## ⚔️ Killboard Notifications
+
+Configure real-time tracking of kills and deaths for guilds and alliances.
+*   **Channel:** `/albion_killboard channel` - Set the target text channel.
+*   **Tracking:** `/albion_killboard add` / `/albion_killboard remove` - Manage tracked entities.
+*   **Overview:** `/albion_killboard status` - View current settings.
+*   For more details, see the [Killboard Guide](killboard.md).
+
 ## 📋 Whitelisting
 
 Whitelist guilds and alliances to automatically give members roles and tags. Commands in this group require the **Manage Roles** permission.
@@ -81,8 +89,9 @@ To ensure security and proper management, the bot follows these permission rules
 | `/albion_alliance` | **Manage Roles** | Manages the whitelisted Albion alliances. |
 | `/albion_manage` | **Manage Roles** | Administrative control over registered users. |
 | `/albion_blacklist`| **Manage Roles** | Manages the server-wide blacklist. |
+| `/albion_killboard`| **Manage Server** | Configures and manages killboard tracking. |
 | `/ava edit` | **Authorized ID List** | Restricted to specific users defined in the bot config (`ALLOWED_EDIT_IDS`). |
-| `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID. |
+| `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID (now uses a Modal form). |
 
 ### Key Requirements
 
