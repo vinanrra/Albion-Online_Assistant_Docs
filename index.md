@@ -21,7 +21,7 @@ Explore our detailed guides for each feature:
 *   **[📊 Player & Guild Statistics](statistics.md)**: How to check and compare stats for players, guilds, and alliances.
 *   **[🗺️ Avalon Maps](maps.md)**: Using the Avalon road mapping system and boss guides.
 *   **[🎉 Party Management](party.md)**: Organizing group signups and using templates.
-*   **[⚔️ Killboard Notifications](killboard.md)**: Real-time tracking of kills and deaths for your guild.
+*   **[⚔️ Killboard Notifications](killboard.md)**: Real-time tracking of kills and deaths for your guild, alliance, or individual players.
 *   **[🛡️ Management & Configuration](management.md)**: Administrator commands for server setup and blacklisting.
 
 ---

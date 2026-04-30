@@ -24,10 +24,10 @@ Define how the bot should handle users who are no longer in whitelisted guilds.
 
 ## ⚔️ Killboard Notifications
 
-Configure real-time tracking of kills and deaths for guilds and alliances.
+Configure real-time tracking of kills and deaths for players, guilds, and alliances.
 *   **Channel:** `/albion_killboard channel` - Set the target text channel.
-*   **Tracking:** `/albion_killboard add` / `/albion_killboard remove` - Manage tracked entities.
-*   **Overview:** `/albion_killboard status` - View current settings.
+*   **Tracking:** `/albion_killboard add` / `/albion_killboard remove` - Manage tracked entities (Player or Guild).
+*   **Overview:** `/albion_killboard status` - View current settings and tracked list.
 *   For more details, see the [Killboard Guide](killboard.md).
 
 ## 📋 Whitelisting
