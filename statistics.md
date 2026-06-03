@@ -24,6 +24,16 @@ You can also check statistics for entire alliances.
 *   **Command:** `/albion_stats alliance`
 *   **Comparison:** Compare two alliances using `/albion_stats compare_alliance`.
 
+## 📅 Event Statistics & Leaderboards
+
+You can also view stats, leaderboards, and activity analytics based on the guild's hosted parties and raids.
+
+*   **Personal Stats:** `/party stats [member]` (Attended/hosted event counts, role breakdown, and reliability rating).
+*   **Guild Leaderboards:** `/party leaderboard` (Top active organizers and attendees).
+*   **Activity Analytics:** `/party analytics` (Peak hours and role popularity trends).
+
+For more details on how events are tracked, see the **[🎉 Party Management Guide](party.md)**.
+
 ---
 
 > ⭐ Use the region selector to ensure you are searching the correct server (Americas, Europe, or Asia).
