@@ -11,23 +11,28 @@ Use `/language` to select the bot's interface language.
 
 ### 2. Configure Registration
 Use `/albion_setup config` to define how registration works.
-*   **Public Registration:** Allow everyone to register or restrict to whitelisted guilds.
+*   **Dashboard UI:** Running the command opens an interactive configuration dashboard panel.
+*   **Public Server:** Allow everyone to register or restrict to whitelisted guilds.
+*   **Public Role:** Select a Discord role to assign to public registrants, or clear it.
 *   **Nickname Sync:** Automatically change Discord nicknames to match Albion character names.
-*   **Tag Display:** Customize how [GUILD] and [ALLIANCE] tags appear in nicknames.
+*   **Tag Display:** Customize how [GUILD] and [ALLIANCE] tags appear in nicknames and their display order.
+*   **Purge Behavior:** Clean up/purge users when they leave the whitelisted guild/alliance.
+
+*Other Setup Commands:*
+*   `/albion_setup show`: Displays the current configuration settings.
+*   `/albion_setup delete`: Resets configuration for this server, deleting all settings from the database.
 
 ### 3. Automated Maintenance (Purge)
 Define how the bot should handle users who are no longer in whitelisted guilds.
 *   **Purge Modes:** Choose between **Full** (complete removal) or **Soft** (remove only specific roles).
 *   **Role Priority:** Decide which role to keep if a user is in both a whitelisted guild and alliance.
 *   **Log Channel:** Set a channel to receive real-time action logs and cycle reports.
-*   For more details, see the [Purge System Guide](file:///home/vinanrra/Documents/Github/Albion-Online_Assistant_Docs/purge_system.md).
+*   For more details, see the [Purge System Guide](purge_system.md).
 
 ## ⚔️ Killboard Notifications
 
 Configure real-time tracking of kills and deaths for players, guilds, and alliances.
-*   **Channel:** `/albion_killboard channel` - Set the target text channel.
-*   **Tracking:** `/albion_killboard add` / `/albion_killboard remove` - Manage tracked entities (Player or Guild).
-*   **Overview:** `/albion_killboard status` - View current settings and tracked list.
+*   **Control Panel:** `/albion_killboard panel` - Opens the interactive control panel to manage target channels, track players or guilds, and view status.
 *   For more details, see the [Killboard Guide](killboard.md).
 
 ## 📋 Whitelisting
@@ -46,14 +51,14 @@ Whitelist guilds and alliances to automatically give members roles and tags. Com
 Manage registered users directly without requiring them to perform actions. These commands require the **Manage Roles** permission.
 
 *   **List:** `/albion_manage list [region] [member] [albion_guild]`
-    *   **Description:** View all registrations for a specific Albion region.
+    *   **Description:** View all registrations for a specific Albion region. Supports interactive pagination (back/forward buttons) if there are more than 50 registered users.
     *   **Filters:** You can filter results by a specific Discord **member** or an **Albion guild name**.
 *   **Update:** `/albion_manage update [region] [member]`
     *   **Description:** Force a data refresh for a specific user. This will re-check their current Albion guild/alliance, update their roles, and sync their nickname if enabled.
 *   **Delete:** `/albion_manage delete [region] [member]`
     *   **Description:** Manually unregister a user from the bot. This removes their linked Albion data and any roles assigned by the bot.
 *   **Register:** `/albion_manage register [region] [member] [albion_player]`
-    *   **Description:** Register a user on their behalf. You can provide the **Albion Nickname** or the **Player ID**. If multiple players match a nickname, a selection menu will appear.
+    *   **Description:** Register a user on their behalf. You can provide the **Albion Nickname** or the **Player ID** (UUID). If multiple players match a nickname, a selection menu will appear.
 
 ## 🚫 Blacklist
 
@@ -89,7 +94,7 @@ To ensure security and proper management, the bot follows these permission rules
 | `/albion_alliance` | **Manage Roles** | Manages the whitelisted Albion alliances. |
 | `/albion_manage` | **Manage Roles** | Administrative control over registered users. |
 | `/albion_blacklist`| **Manage Roles** | Manages the server-wide blacklist. |
-| `/albion_killboard`| **Manage Server** | Configures and manages killboard tracking. |
+| `/albion_killboard panel`| **Manage Roles** | Configures and manages killboard tracking channels and list. |
 | `/ava edit` | **Authorized ID List** | Restricted to specific users defined in the bot config (`ALLOWED_EDIT_IDS`). |
 | `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID (now uses a Modal form). |
 
