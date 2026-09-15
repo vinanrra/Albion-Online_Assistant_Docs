@@ -41,7 +41,6 @@ Authorized administrators can update resource levels for Avalon maps to keep the
 *   **green / blue / gold:** Number of chest spawns.
 *   **rock / wood / ore / fiber / hide:** Enchantment levels.
 *   **dungeon:** Number of static dungeons.
-*   *Note:* This command is restricted to Discord user IDs specified in the bot's environment configuration (`ALLOWED_EDIT_IDS`).
 
 ---
 

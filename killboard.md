@@ -49,15 +49,7 @@ The control panel features the following buttons for easy management:
 
 When a tracked kill or death event occurs, the bot automatically estimates the total silver value of the victim's equipment and inventory:
 
-*   **How it Works:** The bot extracts the item IDs, counts, and qualities from the victim's equipment slots (10 slots) and inventory. It queries the **Albion Online Data Project** REST API for the matching region's historical market prices (daily interval) over the last 7 days. It computes a **volume-weighted average price** across the major trade hubs (Caerleon, Lymhurst, Bridgewatch, Martlock, Thetford, Fort Sterling, Brecilien).
-*   **Fallback Heuristic:** To ensure value is shown even if historical or quality-specific data is sparse (due to the crowdsourced nature of the data project), the bot uses the following fallback chain:
-    1. Calculate the 7-day volume-weighted average for the item's target quality.
-    2. If unavailable, fall back to the 7-day volume-weighted average for Quality 1 (Normal).
-    3. If still unavailable, fall back to the 7-day volume-weighted average for Any Quality.
-    4. If no historical data exists at all for the last 7 days, query the active current prices endpoint for the most recent non-zero minimum sell price (or maximum buy price) matching the fallbacks.
-*   **Display:** The final estimated value is printed:
-    1. In the central column of the custom killboard parchment image.
-    2. Directly in the Discord embed notification description under "Participants".
+*   **How it Works:** The bot extracts the item IDs, counts, and qualities from the victim's equipment slots and inventory. It queries the **Albion Online Data Project** REST API for the matching region's historical market prices over the last 7 days. It computes a **volume-weighted average price** across the cities.
 
 ---
 

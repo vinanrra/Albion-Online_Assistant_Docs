@@ -4,11 +4,11 @@ This guide will walk you through the process of setting up the Albion Bot for yo
 
 ## 1. Initial Configuration
 
-Use the command `/albion_setup config` to define the core behavior of the bot. This command has several options that determine how users will interact with the bot and how their Discord profiles will be modified.
+Use the command `/albion_setup config` to launch the interactive configuration dashboard UI. The dashboard allows administrators to configure the following settings:
 
-### ⚙️ Configuration Options Explained
+### ⚙️ Configuration Settings Explained
 
-| Option | Description |
+| Dashboard Setting | Description |
 | :--- | :--- |
 | **`public`** | **Allow everyone to register?**<br>• **Yes:** Anyone can link their Albion account. They will receive the `public_role` (if configured) even if they aren't in a whitelisted guild/alliance.<br>• **No:** Only members of guilds or alliances you've specifically whitelisted can register. |
 | **`public_role`** | **Public Role**<br>The Discord role given to users who register if `public` is set to **Yes**. This helps identify registered "guest" users. |
@@ -63,9 +63,10 @@ Similar to guilds, use `/albion_alliance add`. Members of any guild within the w
 > **Safe Cleanup:** Removing a guild or alliance will trigger an automated prompt asking if you want to perform a cleanup of the associated users (stripping roles and unregistering them).
 
 ### ⚔️ Setting up Killboard (Optional)
-If you want to track kills and deaths for your guild, alliance, or specific players in a specific channel:
-1.  Use `/albion_killboard channel` to set the destination.
-2.  Use `/albion_killboard add` to add your Guild, Alliance, or Player.
+If you want to track kills and deaths for your guild, alliance, or specific players:
+1.  Use `/albion_killboard panel` to open the control panel.
+2.  Use the green and red buttons to select the text channels for kills and deaths.
+3.  Click **Add Tracking** to select the region/type and enter the players/guilds you want to monitor.
 
 For more details, see the [Killboard Guide](killboard.md).
 
