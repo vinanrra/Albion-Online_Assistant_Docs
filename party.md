@@ -37,24 +37,25 @@ Clicking the **Manage Event** button opens a private, interactive dashboard:
 *   **Kick Member:** Opens a dropdown to remove a member from a specific slot.
 *   **Add Member:** Search for a Discord member and select a role slot to manually assign them.
 *   **Finish Event:** Initiates party completion, locking signups and archiving the event after a 15-minute stats compilation grace period.
+*   **Delete Event:** Permanently deletes the party, its thread, recruitment message, and all signups with a confirmation prompt.
 
 ---
 
 ## 💬 Party Thread Commands
 
-While inside the party thread (Party Chat), members and leaders can also use slash commands to manage participation:
+While inside the party thread (Party Chat), members, leaders, and administrators can also use slash commands to manage participation:
 
 ### Member Commands
 *   `/party join`: Join the party by selecting a role from a dropdown. (Disabled after start time).
 *   `/party leave`: Leave your slot. If you occupy multiple, select which one to leave. (Disabled after start time).
 
-### Leader Commands (Leader Only)
-*   `/party add [user]`: Manually add a member to a role slot.
-*   `/party kick [user]`: Remove a user from a specific slot. If no user is specified and a slot has multiple members, a dropdown selector appears.
-*   `/party leader [user]`: Transfer event leadership to another Discord member.
-*   `/party edit`: Open the edit menu to modify the details or time of the party.
-*   `/party delete`: Delete the recruitment message, the database entry, and the active thread.
-*   `/party finish`: Initiates party completion immediately. Locks signups (changing the embed title status to `🏁 [FINISHING]`) and continues tracking PvP event stats for a 15-minute grace period to capture late API data before posting the final report.
+### Leader & Admin Commands
+*   `/party add [user]`: Manually add a member to a role slot (Leader Only).
+*   `/party kick [user]`: Remove a user from a specific slot. If no user is specified and a slot has multiple members, a dropdown selector appears (Leader Only).
+*   `/party leader [user]`: Transfer event leadership to another Discord member (Leader Only).
+*   `/party edit`: Open the edit menu to modify the details or time of the party (Leader Only).
+*   `/party delete`: Delete the recruitment message, the database entry, and the active thread (Leader or Admin).
+*   `/party finish`: Initiates party completion immediately (Leader Only). Locks signups (changing the embed title status to `🏁 [FINISHING]`) and continues tracking PvP event stats for a 15-minute grace period to capture late API data before posting the final report.
 
 ---
 
@@ -88,6 +89,7 @@ Templates allow you to save common team compositions (e.g. "Standard 10-man ZvZ"
 *   `/party template show`: View details of a specific template.
 *   `/party template list`: List all templates saved in the server.
 *   `/party template delete`: Delete a template via a dropdown selector.
+*   `/party template manage`: Clean up and manage server templates (requires **Manage Server** permission by default, unless configured otherwise via Discord Integrations).
 *   `/party template capture [name]`: Capture the currently active party's slots and save them as a new template.
 *   `/party create use_template:True`: Start a new party creation using a saved template.
 
@@ -95,7 +97,7 @@ Templates allow you to save common team compositions (e.g. "Standard 10-man ZvZ"
 
 ## ⚙️ Server Settings
 
-Administrators can configure party behavior using `/party_settings` to open an interactive configuration panel:
+Administrators can configure party behavior using `/party_settings` (requires **Manage Server** permission by default, unless customized via Discord's command permissions system) to open an interactive configuration panel:
 *   **Multi-Candidate:** Allow or restrict users from signing up for multiple roles/slots in the same party.
 *   **Pre-Registration:** Require users to have registered their Albion characters using `/albion_register start` before they can sign up for parties.
 *   **Summary Enabled:** Toggle whether the bot maintains a live summary list of all upcoming events.

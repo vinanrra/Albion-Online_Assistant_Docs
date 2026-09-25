@@ -4,9 +4,12 @@ Manage and explore the Roads of Avalon with ease.
 
 ## 📜 Map Information
 
-Use the `/ava check` command to retrieve detailed information about a specific map, including:
-*   Tier, chests (green, blue, gold), resource enchantment levels (rock, wood, ore, fiber, hide), and static dungeons.
-*   The map image if available.
+Use the `/ava check` command to retrieve detailed information about a specific map, featuring a modern grid layout and connection-themed embeds:
+*   **Tier & Connection Type:** Displays the map tier and connection category (`👑 Royal`, `💀 Black Zone`, `🌀 Tunnel`, `🏛️ Deep Zone`, or Rest) with dynamic border colors matching zone danger.
+*   **Chests:** Color-coded chest counts (🟢 Green, 🔵 Blue, 🟡 Gold).
+*   **Resources:** Gathering nodes organized with clear icons (`🪵 Wood`, `🪨 Rock`, `⛏️ Ore`, `🌿 Fiber`, `🐗 Hide`).
+*   **Dungeons:** Number of static Avalonian dungeons (`🏰 Avalonian Dungeons`).
+*   **Map Graphic:** Displays the high-resolution map image if available.
 
 **Usage:** `/ava check map_name:MapName`
 *   *Tip:* Supports substring and abbreviation searches (e.g. searching `"FA"` will find `"Fasites-Azazsum"`).
@@ -41,6 +44,8 @@ Authorized administrators can update resource levels for Avalon maps to keep the
 *   **green / blue / gold:** Number of chest spawns.
 *   **rock / wood / ore / fiber / hide:** Enchantment levels.
 *   **dungeon:** Number of static dungeons.
+
+> ℹ️ **Permissions:** Requires your Discord User ID to be defined in the bot's `ALLOWED_EDIT_IDS` configuration. Command visibility and interaction permissions can also be configured or restricted by server administrators through Discord's built-in command permissions system (**Server Settings → Integrations → Albion Assistant**).
 
 ---
 

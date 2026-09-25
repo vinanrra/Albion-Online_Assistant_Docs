@@ -8,7 +8,7 @@ To enable killboard notifications, follow these simple steps:
 
 ### 1. Open the Killboard Control Panel
 Use the command `/albion_killboard panel` to launch the interactive control panel dashboard.
-*   **Permission:** Requires **Manage Roles** or **Manage Server** permission in Discord.
+*   **Permission:** Requires **Manage Server** (`manage_guild=True`) permission in Discord by default (unless customized in **Server Settings → Integrations**).
 *   This command returns an interactive interface with buttons to manage all settings.
 
 ### 2. Configure Notification Channels
@@ -45,11 +45,13 @@ The control panel features the following buttons for easy management:
 
 ---
 
-## 💰 Estimated Kill Value
+## 💰 Estimated Kill Value & PvP Tracking
 
 When a tracked kill or death event occurs, the bot automatically estimates the total silver value of the victim's equipment and inventory:
 
-*   **How it Works:** The bot extracts the item IDs, counts, and qualities from the victim's equipment slots and inventory. It queries the **Albion Online Data Project** REST API for the matching region's historical market prices over the last 7 days. It computes a **volume-weighted average price** across the cities.
+*   **Market Price Valuation:** The bot extracts the item IDs, counts, and qualities from the victim's equipment slots and inventory. It queries the **Albion Online Data Project** REST API for historical market prices over the last 7 days and computes a **volume-weighted average price** across the cities.
+*   **7-Day Database Cache & Rate Protection:** Market valuations are cached locally in the database for 7 days with proactive sliding-window rate limiting and fallback shields to ensure ultra-fast, resilient image generation.
+*   **Player Profit & Loss Tracking:** Combat events processed by the killboard engine automatically update player combat statistics, allowing members to inspect their net gains and losses via `/albion_stats user`.
 
 ---
 

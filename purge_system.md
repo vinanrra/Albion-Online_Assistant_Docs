@@ -10,7 +10,9 @@ The bot runs a background cycle (every few hours, as configured by the bot owner
 2.  **Whitelist Comparison**: It compares this data against your server's `/albion_guild` and `/albion_alliance` whitelists.
 3.  **Action Determination**:
     *   **Level 1: Update**: If the user moved from one whitelisted guild/alliance to another, the bot updates their roles and nickname tags immediately.
-    *   **Level 2: Purge**: If the user is no longer in any whitelisted entity (neither guild nor alliance), the bot triggers a purge based on your configured **Purge Mode**.
+    *   **Level 2: Purge Evaluation**:
+        *   **Private Servers (`public: No`)**: If a registered member is no longer found in any whitelisted entity, the bot triggers a purge based on your configured **Purge Mode**.
+        *   **Hybrid Public Servers (`public: Yes`)**: The bot distinguishes between community guests and whitelisted members. Registered guests who joined without being in a whitelisted entity are **preserved**. Members who previously belonged to a whitelisted guild/alliance but left are actively detected and purged according to your configured **Purge Mode**.
 
 > ⭐ **Role Priority**: During updates, the bot respects your **Role Conflict Mode** setting. If a user is in both a whitelisted guild and alliance, the bot will filter roles based on your priority (Additive, Guild Only, or Alliance Only).
 
@@ -28,7 +30,7 @@ This is the "Zero Tolerance" mode. If a user is not in a whitelisted guild/allia
 
 ### 2. Soft Purge (Mode: 2)
 This mode is designed for large community servers or alliances that allow "Guest" or "Public" members to stay, but only want to give special roles to active members.
-*   **Discord Action**: Removes only the specific **Guild and Alliance roles** provided by the whitelist. It **KEPPS** the Public role and keeps their nickname as it was.
+*   **Discord Action**: Removes only the specific **Guild and Alliance roles** provided by the whitelist. It **KEEPS** the Public role and keeps their nickname as it was.
 *   **Database Action**: Retains the registration record.
 *   **Best For**: Open community hubs, coalition servers, and social alliances.
 
@@ -60,10 +62,10 @@ At the end of every audit cycle, the bot sends a summary embed:
 *   **Setup**: `public: No`, `purge_users: Yes`, `purge_mode: Full`.
 *   **Result**: When a player is kicked from the guild in-game, they lose all access to your Discord automatically within hours.
 
-### Scenario B: The Community Hub
-**Goal**: Everyone can chat in `#general`, but only members get access to `#war-room`.
+### Scenario B: The Hybrid Community Hub
+**Goal**: Allow verified guests to hang out in public channels, while ensuring that former guild members lose their private guild roles when they leave.
 *   **Setup**: `public: Yes`, `public_role: @Verified`, `purge_users: Yes`, `purge_mode: Soft`.
-*   **Result**: If a player leaves your guild, they lose the `@Veteran` role and access to `#war-room`, but they keep the `@Verified` role and can still chat in public channels.
+*   **Result**: Guests who registered without a whitelisted guild keep their `@Verified` role indefinitely. When a registered guild member leaves your guild in-game, the bot detects their departure and purges their guild roles while keeping their `@Verified` role intact.
 
 ---
 

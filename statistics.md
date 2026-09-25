@@ -4,10 +4,17 @@ The bot allows you to fetch real-time statistics from the Albion Online API, and
 
 ## 👤 Player Stats
 
-Get detailed info about a player's Kill Fame, Death Fame, PvE progress, and gathering/crafting levels.
+Get detailed info about a player's Kill Fame, Death Fame, PvE progress, gathering/crafting levels, external killboard links, and estimated PvP profit & loss.
 
-*   **Command:** `/albion_stats user [region] [username]`
+*   **Command:** `/albion_stats user [region] [username]` — displays comprehensive player statistics including fame breakdowns, guild details, external killboard links, and estimated PvP profit & loss.
 *   **Comparison:** `/albion_stats compare_user [region] [user1] [user2]` — compares two players side-by-side, highlighting the higher stats.
+
+### 💰 Estimated Profit & Loss (PvP)
+The `/albion_stats user` embed includes a dedicated **Estimated Profit & Loss (PvP)** tracker:
+*   **Timeframes:** Audits player combat activity across **Today**, **Yesterday**, **Last 7 Days**, and **Lifetime**.
+*   **Net Silver Indicators:** Clearly displays net silver balance with visual status badges (🟢 positive gain, 🔴 net loss, ⚪ even).
+*   **Detailed Breakdown:** Shows gross profit (`📈 Profit: +X`), equipment loss (`📉 Loss: -Y`), and combat records (`⚔️ X kills, Y assists, Z deaths`).
+*   **Market Price Valuation:** Integrated with real-time market data from the **Albion Online Data Project**, protected by a 7-day database pricing cache and rate-limit fallbacks to value kills and deaths accurately.
 
 ---
 

@@ -18,27 +18,29 @@ Use the command `/albion_setup config` to launch the interactive configuration d
 | **`nick_ally_tag_length`** | **Alliance Tag Length**<br>The maximum characters for the alliance tag (1-7). |
 | **`nick_guild_tag`** | **Guild Tag Display**<br>Choose who can see the guild tag in nicknames. |
 | **`nick_guild_tag_length`** | **Guild Tag Length**<br>The maximum characters for the guild tag (1-7). |
-| **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot will periodically check users and maintain their roles/nicknames based on their current guild status. |
+| **`purge_users`** | **Automatic Cleanup?**<br>If enabled, the bot periodically audits users and maintains their roles/nicknames based on guild status:<br>• **Private Servers (`public: No`):** Purges any registered member who is not found in a whitelisted guild or alliance.<br>• **Hybrid Servers (`public: Yes`):** Preserves guest registrations (users registered without whitelisted guild/alliance affiliations), while actively detecting and purging former guild/alliance members who leave the whitelisted roster. |
 | **`purge_mode`** | **Purge Behavior**<br>• **Full:** Strip all roles and reset nickname if user is not on any whitelist.<br>• **Soft:** Only remove specifically whitelisted roles, keeping the Public role and nickname. |
 | **`purge_log_channel`** | **Log Channel**<br>A text channel where the bot will send detailed logs of every update/purge action taken, and a summary report after each cycle. |
 | **`role_conflict`** | **Role Priority Mode**<br>How to handle users in both a whitelisted guild AND alliance:<br>• **Additive:** Give both roles.<br>• **Guild Only:** Prioritize guild role.<br>• **Alliance Only:** Prioritize alliance role. |
 
 ---
 
-## ⚡ The "Public" vs "Purge" Interaction
+## ⚡ The "Public" vs "Purge" Interaction (Hybrid Server Support)
 
-It is important to understand how these two settings interact when automated maintenance is active.
+It is important to understand how these settings interact when automated maintenance is active.
 
-> ⚠️
-> If **`purge_users`** is **ENABLED** and you have whitelists configured (via `/albion_guild add` or `/albion_alliance add`), the bot will purge any user who is NOT in any of those whitelisted entities.
+### 🛡️ Private Servers (`public: No`)
+If your server is private (`public: No`) and **`purge_users`** is **ENABLED**, the bot requires every registered member to be found on an active `/albion_guild` or `/albion_alliance` whitelist. Any registered member who leaves or is not part of a whitelisted guild/alliance will be purged according to your configured `purge_mode`.
 
-**What this means for Public users:**
-If you enable **`public`** registration but also enable **`purge_users`**, a user who is not in a whitelisted guild or alliance will be allowed to register initially. However, during the next automated cleanup cycle, the bot will see that they are not on any whitelist and will **PURGE** them (removing their roles and resetting their nickname).
+### 🌐 Hybrid Public Servers (`public: Yes`)
+If your server is public (`public: Yes`) and **`purge_users`** is **ENABLED**, the bot operates in **Hybrid Mode**:
+* **Guest Registrations Preserved:** Community members who register without belonging to any whitelisted guild or alliance are recognized as guests. They keep their verification and `public_role` and will **NOT** be purged.
+* **Leavers Detected & Purged:** If a user was previously registered as part of a whitelisted guild or alliance and subsequently leaves the roster, the bot actively detects their departure and purges them according to your configured `purge_mode`.
 
 **Recommended Configuration:**
 - **For Private/Guild Servers:** `public: No`, `purge_users: Yes`, `purge_mode: Full`.
 - **For Open Servers (Community):** `public: Yes`, `purge_users: No`.
-- **For Managed Servers with Guests:** `public: Yes`, `purge_users: Yes`, `purge_mode: Soft` (This keeps guests verified but updates their roles based on guild/alliance membership).
+- **For Hybrid Hubs (Guild + Community Guests):** `public: Yes`, `purge_users: Yes`, `purge_mode: Soft` or `Full` (Guests remain registered, but former guild members lose access upon departure).
 
 For a deep dive into the automated cleanup logic, see the [Purge System Guide](purge_system.md).
 
@@ -64,11 +66,18 @@ Similar to guilds, use `/albion_alliance add`. Members of any guild within the w
 
 ### ⚔️ Setting up Killboard (Optional)
 If you want to track kills and deaths for your guild, alliance, or specific players:
-1.  Use `/albion_killboard panel` to open the control panel.
+1.  Use `/albion_killboard panel` to open the control panel (requires **Manage Server** permission by default, unless configured otherwise via Discord Integrations).
 2.  Use the green and red buttons to select the text channels for kills and deaths.
 3.  Click **Add Tracking** to select the region/type and enter the players/guilds you want to monitor.
 
 For more details, see the [Killboard Guide](killboard.md).
+
+### 🌀 Setting up Ancient Lands Portal Timers (Optional)
+If you want to track Ancient Lands portal countdowns:
+1.  Use `/albion_ancient_lands_portal channel` to set an auto-updating graphics channel (requires **Manage Server** permission by default, unless configured otherwise via Discord Integrations).
+2.  Use `/albion_ancient_lands_portal set` to set portal opening timers based on in-game tooltips.
+
+For more details, see the [Portal Timers Guide](portal.md).
 
 ---
 
@@ -88,7 +97,7 @@ Once you have configured the bot and whitelisted at least one guild or alliance,
 
 ## ℹ️ Pro Tips for Administrators
 
-> ⭐ **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. The user executing administrative commands must also have the **Manage Roles** permission.
+> ⭐ **Role Hierarchy & Permissions:** Ensure the bot's highest role is placed **above** the roles it needs to assign (like Guild roles) and above the users it needs to rename. Commands enforce default permissions (such as **Manage Roles** or **Manage Server**) unless customized by server administrators using Discord's command permissions system (**Server Settings → Integrations → Albion Assistant**).
 >
 > ⚠️ **Admin & Owner Limitations:** Due to Discord's security model, the bot **cannot** change nicknames or manage roles for the **Server Owner** or any user with **Administrator** permissions. This is a built-in protection to prevent bots from locking out or modifying server owners and high-privileged accounts.
 

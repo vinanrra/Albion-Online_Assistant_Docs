@@ -1,6 +1,6 @@
 # 🛡️ Management & Configuration
 
-Moderation commands and administrative settings. Most of these commands require the **Manage Roles** permission.
+Moderation commands and administrative settings. Most of these commands require the **Manage Roles** or **Manage Server** permission.
 
 ## ⚙️ Initial Setup
 
@@ -16,7 +16,7 @@ Use `/albion_setup config` to define how registration works.
 *   **Public Role:** Select a Discord role to assign to public registrants, or clear it.
 *   **Nickname Sync:** Automatically change Discord nicknames to match Albion character names.
 *   **Tag Display:** Customize how [GUILD] and [ALLIANCE] tags appear in nicknames and their display order.
-*   **Purge Behavior:** Clean up/purge users when they leave the whitelisted guild/alliance.
+*   **Purge Behavior:** Clean up/purge users when they leave the whitelisted guild/alliance. Supports private servers (purging non-whitelisted members) and hybrid public servers (preserving guest users while purging leavers).
 
 *Other Setup Commands:*
 *   `/albion_setup show`: Displays the current configuration settings.
@@ -32,8 +32,15 @@ Define how the bot should handle users who are no longer in whitelisted guilds.
 ## ⚔️ Killboard Notifications
 
 Configure real-time tracking of kills and deaths for players, guilds, and alliances.
-*   **Control Panel:** `/albion_killboard panel` - Opens the interactive control panel to manage target channels, track players or guilds, and view status.
+*   **Control Panel:** `/albion_killboard panel` - Opens the interactive control panel to manage target channels, track players or guilds, and view status (requires **Manage Server** permission).
 *   For more details, see the [Killboard Guide](killboard.md).
+
+## 🌀 Ancient Lands Portal Timers
+
+Configure persistent live schedule graphics and countdown timers for Lethal and Non-Lethal portals.
+*   **Live Channel:** `/albion_ancient_lands_portal channel` - Designates the text channel where live countdown boards are maintained (requires **Manage Server** permission).
+*   **Timer Controls:** `/albion_ancient_lands_portal set`, `/albion_ancient_lands_portal config`, and `/albion_ancient_lands_portal clear`.
+*   For more details, see the [Portal Timers Guide](portal.md).
 
 ## 📋 Whitelisting
 
@@ -82,11 +89,11 @@ Administrators can update resource levels for Avalon maps to keep information cu
 
 ## 🔐 Permissions & Access
 
-To ensure security and proper management, the bot follows these permission rules. Use the table below to determine which role or permission you need to execute specific commands.
+To ensure security and proper management, the bot specifies default permission requirements for slash command interactions. **These commands require the listed permissions by default, unless explicitly configured or overridden by server administrators through Discord's built-in command permissions system (`Server Settings → Integrations → Albion Assistant`).**
 
 ### Permissions Table
 
-| Command Group | Required Discord Permission | Notes |
+| Command Group | Default Discord Permission | Notes |
 | :--- | :--- | :--- |
 | `/language` | **Administrator** | Changes the bot's interface language for the entire server. |
 | `/albion_setup` | **Manage Roles** | Configures registration, nickname sync, and maintenance. |
@@ -94,13 +101,19 @@ To ensure security and proper management, the bot follows these permission rules
 | `/albion_alliance` | **Manage Roles** | Manages the whitelisted Albion alliances. |
 | `/albion_manage` | **Manage Roles** | Administrative control over registered users. |
 | `/albion_blacklist`| **Manage Roles** | Manages the server-wide blacklist. |
-| `/albion_killboard panel`| **Manage Roles** | Configures and manages killboard tracking channels and list. |
+| `/albion_killboard panel`| **Manage Server** | Configures and manages killboard tracking channels and list. |
+| `/party_settings` | **Manage Server** | Configures party recruitment rules, requirements, and live summary channels. |
+| `/party template manage` | **Manage Server** | Clean up and manage server party templates. |
+| `/albion_ancient_lands_portal` | **Manage Server** | Manages portal countdowns and live schedule channels (`channel`, `set`, `config`, `clear`). |
 | `/ava edit` | **Authorized ID List** | Restricted to specific users defined in the bot config (`ALLOWED_EDIT_IDS`). |
-| `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID (now uses a Modal form). |
+| `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID (uses a Modal form). |
+
+> ℹ️ **Customizing Command Permissions in Discord:**
+> Discord allows server administrators to customize command access independently of the bot's code. You can allow or deny specific commands for individual roles, channels, or members by navigating to **Server Settings → Integrations → Bots and Apps (Albion Assistant)**.
 
 ### Key Requirements
 
-1.  **Server Administration:** Commands requiring **Manage Roles** or **Administrator** are generally accessible to the Server Owner and any user with those specific permissions.
+1.  **Server Administration:** Commands requiring **Manage Roles**, **Manage Server**, or **Administrator** are accessible to the Server Owner and users with those permissions by default (unless customized via Discord Integrations).
 2.  **Guild Context:** All administrative and configuration commands must be used within a Discord Server (Guild). They will not work in Direct Messages (DMs).
 3.  **Role Hierarchy:** For the bot to manage roles or nicknames, the **"Albion Assistant"** role must be positioned **higher** than the roles it is trying to assign or the users it is trying to manage in the Discord Server Settings.
 4.  **Admin & Owner Accounts:** The bot **will fail** to add/remove roles or change nicknames for the **Server Owner** or users with **Administrator** permissions. This is due to Discord's built-in security hierarchy, which prevents any user (including bots) from modifying accounts with higher or maximum administrative privileges.
@@ -108,11 +121,8 @@ To ensure security and proper management, the bot follows these permission rules
 
 ---
 
-> ⚠️ If a command fails despite you having the correct permissions, check the **Integration Settings** in your Server Settings to ensure Discord hasn't overridden the bot's default command permissions.
-
----
-
-> ⚠️ These commands require **Manage Roles** permissions in the Discord server (some may still require Administrator depending on Discord's internal override).
+> ℹ️ **Discord Permission System:**
+> All administrative commands require their respective Discord permissions by default, unless customized or overridden using Discord's command permissions system for interactions under **Server Settings → Integrations**.
 
 ---
 

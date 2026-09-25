@@ -13,13 +13,15 @@ To use many of the bot's features (such as receiving roles, nicknames, or joinin
 
 ## 📋 Registration Commands
 
-| Command | Parameter / Usage | Required Permission | Description |
+| Command | Parameter / Usage | Default Permission* | Description |
 | :--- | :--- | :--- | :--- |
 | **`/albion_register start`** | `[region]` `[albion_nick]` | None (Everyone) | Starts the registration process for your character in a specific region. |
 | **`/albion_register show`** | `[region]` (optional) | None (Everyone) | Shows your registration status and details. If region is omitted, shows all. |
 | **`/albion_register remove`** | `[region]` | None (Everyone) | Unlinks your Discord account from your Albion character in the specified region. |
 | **`/albion_register check`** | `[member]` `[region]` (optional) | None (Everyone) | Check the registration details of another server member. |
 | **`/albion_register list`** | `[region]` | **Manage Roles** | Lists all registered users on this server for the specified region, sorted alphabetically. Supports pagination for large servers. |
+
+> ℹ️ *\*Requires **Manage Roles** by default, unless configured otherwise by server administrators via Discord's command permissions system (**Server Settings → Integrations → Albion Assistant**).*
 
 ---
 
