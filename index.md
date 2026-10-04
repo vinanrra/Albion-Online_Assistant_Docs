@@ -22,7 +22,6 @@ Explore our detailed guides for each feature:
 *   **[🗺️ Avalon Maps](maps.md)**: Using the Avalon road mapping system and boss guides.
 *   **[🎉 Party Management](party.md)**: Organizing group signups and using templates.
 *   **[⚔️ Killboard Notifications](killboard.md)**: Real-time tracking of kills and deaths for your guild, alliance, or individual players.
-*   **[🌀 Ancient Lands Portal Timers](portal.md)**: Live visual schedule graphics and countdown timers for Lethal and Non-Lethal portals.
 *   **[🛡️ Management & Configuration](management.md)**: Administrator commands for server setup and blacklisting.
 
 ---

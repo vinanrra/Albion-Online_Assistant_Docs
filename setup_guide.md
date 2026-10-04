@@ -72,13 +72,6 @@ If you want to track kills and deaths for your guild, alliance, or specific play
 
 For more details, see the [Killboard Guide](killboard.md).
 
-### 🌀 Setting up Ancient Lands Portal Timers (Optional)
-If you want to track Ancient Lands portal countdowns:
-1.  Use `/albion_ancient_lands_portal channel` to set an auto-updating graphics channel (requires **Manage Server** permission by default, unless configured otherwise via Discord Integrations).
-2.  Use `/albion_ancient_lands_portal set` to set portal opening timers based on in-game tooltips.
-
-For more details, see the [Portal Timers Guide](portal.md).
-
 ---
 
 ## 3. User Registration Process

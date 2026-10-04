@@ -35,13 +35,6 @@ Configure real-time tracking of kills and deaths for players, guilds, and allian
 *   **Control Panel:** `/albion_killboard panel` - Opens the interactive control panel to manage target channels, track players or guilds, and view status (requires **Manage Server** permission).
 *   For more details, see the [Killboard Guide](killboard.md).
 
-## 🌀 Ancient Lands Portal Timers
-
-Configure persistent live schedule graphics and countdown timers for Lethal and Non-Lethal portals.
-*   **Live Channel:** `/albion_ancient_lands_portal channel` - Designates the text channel where live countdown boards are maintained (requires **Manage Server** permission).
-*   **Timer Controls:** `/albion_ancient_lands_portal set`, `/albion_ancient_lands_portal config`, and `/albion_ancient_lands_portal clear`.
-*   For more details, see the [Portal Timers Guide](portal.md).
-
 ## 📋 Whitelisting
 
 Whitelist guilds and alliances to automatically give members roles and tags. Commands in this group require the **Manage Roles** permission.
@@ -104,7 +97,6 @@ To ensure security and proper management, the bot specifies default permission r
 | `/albion_killboard panel`| **Manage Server** | Configures and manages killboard tracking channels and list. |
 | `/party_settings` | **Manage Server** | Configures party recruitment rules, requirements, and live summary channels. |
 | `/party template manage` | **Manage Server** | Clean up and manage server party templates. |
-| `/albion_ancient_lands_portal` | **Manage Server** | Manages portal countdowns and live schedule channels (`channel`, `set`, `config`, `clear`). |
 | `/ava edit` | **Authorized ID List** | Restricted to specific users defined in the bot config (`ALLOWED_EDIT_IDS`). |
 | `/broadcast` | **Bot Owner Only** | Restricted to the global Bot Owner ID (uses a Modal form). |
 
