@@ -7,8 +7,9 @@ Organize signups for raids, fame farms, and other group activities with advanced
 To start a new party signup:
 1.  Run the command `/party create`.
 2.  Fill out the modal form with **Title**, **Description**, **Roles** (e.g., Tank, Healer, DPS), and **Footer**.
-3.  **use_template** (optional): Select `True` to load a previously saved party template to pre-fill the form.
-4.  The bot will publish a recruitment message with interactive buttons and automatically create a **dedicated thread (Party Chat)** for communication.
+3.  **image** (optional): Upload or attach an image to display directly within the party recruitment embed.
+4.  **use_template** (optional): Select `True` to load a previously saved party template to pre-fill the form.
+5.  The bot will publish a recruitment message with balanced multi-column role layouts, interactive buttons, and automatically create a **dedicated thread (Party Chat)** for communication.
 
 > ⚠️ **Character Limit:** The total size of the party embed (sum of Title, Description, Roles, and Footer) cannot exceed Discord's **6000 character limit**. The creation/edit modal will validate this and show an error if exceeded.
 
@@ -18,25 +19,26 @@ To start a new party signup:
 
 Every published event features an **Interactive Action Panel** directly below the recruitment embed. This allows users to sign up without using slash commands:
 
-*   🟢 **Join Role**: Opens a paginated select menu listing all available slots/roles (displays up to 20 slots per page with **◀ Prev** and **Next ▶** buttons to bypass Discord's 25-option limit).
+*   🟢 **Join Role**: Opens a paginated select menu listing all available slots/roles (displays up to 20 slots per page with **◀ Prev** and **Next ▶** buttons to bypass Discord's 25-option limit). If the server requires pre-registration, unregistered users will be prompted to register first.
 *   🔴 **Leave Slot**: Removes you from the event. If you occupy multiple slots, opens an ephemeral menu to choose which slot to leave.
 *   ⚙️ **Manage Event**: Opens a private management dashboard (visible only to the Event Leader and Guild Administrators).
 
 ### ⏳ Start Time Lock & Management Window
 *   Once the scheduled event start time is reached, the **Join Role** and **Leave Slot** buttons are disabled.
-*   The **Manage Event** button remains active for **30 minutes** after the start time, allowing the leader to make adjustments.
-*   After 30 minutes, all action buttons are removed from the recruitment message, and a notification is sent to the event thread indicating the management window has closed.
+*   The **Manage Event** button remains active for a configurable post-start lock window (default **30 minutes**, configurable via `/party_settings`), allowing the leader to make adjustments.
+*   After the lock window expires, all action buttons are removed from the recruitment message, and a notification is sent to the event thread indicating the management window has closed.
 
 ---
 
 ## 🛠️ Event Management Dashboard (Leader / Admin Only)
 
 Clicking the **Manage Event** button opens a private, interactive dashboard:
-*   **Edit Details:** Opens a modal to modify the title, description, roles, footer, or thread name.
+*   **Edit Details:** Opens a modal to modify the title, description, roles, footer, or thread name. Existing member signups are preserved across edits.
+*   **Edit Image:** Attach or update the image displayed on the event embed.
 *   **Edit Time:** Reschedules the event time using date/hour/minute selectors. (Rescheduling an event to the future automatically restores active signups and action buttons!).
 *   **Kick Member:** Opens a dropdown to remove a member from a specific slot.
 *   **Add Member:** Search for a Discord member and select a role slot to manually assign them.
-*   **Finish Event:** Initiates party completion, locking signups and archiving the event after a 15-minute stats compilation grace period.
+*   **Finish Event:** Initiates party completion, locking signups and archiving the event after a configurable API sync delay grace period (default 15 minutes).
 *   **Delete Event:** Permanently deletes the party, its thread, recruitment message, and all signups with a confirmation prompt.
 
 ---
@@ -98,11 +100,24 @@ Templates allow you to save common team compositions (e.g. "Standard 10-man ZvZ"
 ## ⚙️ Server Settings
 
 Administrators can configure party behavior using `/party_settings` (requires **Manage Server** permission by default, unless customized via Discord's command permissions system) to open an interactive configuration panel:
+
+### Basic Settings
 *   **Multi-Candidate:** Allow or restrict users from signing up for multiple roles/slots in the same party.
-*   **Pre-Registration:** Require users to have registered their Albion characters using `/albion_register start` before they can sign up for parties.
+*   **Require Registration:** Require users to have registered their Albion characters using `/albion_register start` before they can join party slots.
 *   **Summary Enabled:** Toggle whether the bot maintains a live summary list of all upcoming events.
 *   **In-Event Channel:** Toggle whether to display the upcoming events summary within the event channel itself.
 *   **Centralized Channel:** Select a text channel where a live summary of all upcoming guild events will be continuously updated.
+*   **Notification Role:** Choose a Discord role to mention when an event is published, and choose whether to ping inside the thread or in the main channel.
+
+### Advanced Settings & Lifecycle
+Access the **Advanced Settings** button in `/party_settings` to configure lifecycle timings:
+*   **Auto-Complete Hours:** Configure party auto-completion cutoff (from 1 to 72 hours).
+*   **Event Start Ping:** Toggle whether to send a reminder mention to joined participants when the party start time is reached.
+*   **Discussion Threads:** Enable or disable automatic thread creation for party chat, set slowmode (0s to 6 hours), and configure whether threads are automatically locked and archived upon event completion.
+*   **Late Infraction Window:** Customize the late infraction cutoff window (5 to 60 minutes).
+*   **Post-Start Lock Timer:** Customize the post-start management window (15 to 120 minutes) during which the leader can still adjust slots after start time.
+*   **Finish API Grace Period:** Configure the sync delay (5 to 30 minutes) on `/party finish` to allow Albion API combat data to arrive before generating the final report.
+*   **Leaderboard Top Count:** Configure how many top killers/damage dealers are displayed on event reports (3 to 10).
 
 ---
 

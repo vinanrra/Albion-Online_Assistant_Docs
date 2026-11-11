@@ -19,10 +19,12 @@ Explore our detailed guides for each feature:
 *   **[🧹 Automated Purge System](purge_system.md)**: Detailed guide on how the bot maintains roles and cleans up nicknames.
 *   **[👤 Registration & Whitelist](registration.md)**: How to link your account and get guild/alliance roles.
 *   **[📊 Player & Guild Statistics](statistics.md)**: How to check and compare stats for players, guilds, and alliances.
+*   **[🛡️ IP Soft Caps & Scaling](albion_caps.md)**: Reference guide and calculator for PvP/PvE Item Power caps across all game modes.
+*   **[🔮 Awakened Weapons](awakened.md)**: Calculate pristine weapon awakening base costs, attunement silver, strain, and fees.
 *   **[🗺️ Avalon Maps](maps.md)**: Using the Avalon road mapping system and boss guides.
-*   **[🎉 Party Management](party.md)**: Organizing group signups and using templates.
+*   **[🎉 Party Management](party.md)**: Organizing group signups, image attachments, threaded chat, and templates.
 *   **[⚔️ Killboard Notifications](killboard.md)**: Real-time tracking of kills and deaths for your guild, alliance, or individual players.
-*   **[🛡️ Management & Configuration](management.md)**: Administrator commands for server setup and blacklisting.
+*   **[🛡️ Management & Configuration](management.md)**: Administrator commands for server setup, security options, and blacklisting.
 
 ---
 

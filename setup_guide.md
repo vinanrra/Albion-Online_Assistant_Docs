@@ -23,6 +23,18 @@ Use the command `/albion_setup config` to launch the interactive configuration d
 | **`purge_log_channel`** | **Log Channel**<br>A text channel where the bot will send detailed logs of every update/purge action taken, and a summary report after each cycle. |
 | **`role_conflict`** | **Role Priority Mode**<br>How to handle users in both a whitelisted guild AND alliance:<br>• **Additive:** Give both roles.<br>• **Guild Only:** Prioritize guild role.<br>• **Alliance Only:** Prioritize alliance role. |
 
+### 🔒 Advanced Security Configuration
+
+Clicking the **Advanced Security** button in `/albion_setup config` provides additional controls:
+
+| Security Setting | Description |
+| :--- | :--- |
+| **`unregister_remove_roles`** | **Strip Roles on Unregister**<br>If enabled, automatically removes assigned guild/alliance roles immediately when a user unregisters via `/albion_register unregister`. |
+| **`purge_protected_roles`** | **Protected Roles**<br>Select Discord roles that should be protected and never removed by automated purge cycles, even if the user is purged. |
+| **`soft_purge_reset_nick`** | **Reset Nick on Soft Purge**<br>When enabled, resets the user's nickname back to default even during a Soft Purge. |
+| **`blacklist_alert_channel_id`**| **Blacklist Alert Channel**<br>Designate a channel where security alerts will be sent if a blacklisted member attempts to register or interact with the bot. |
+| **`blacklist_auto_purge_action`**| **Blacklist Auto Action**<br>Action taken automatically when a blacklisted member is detected: **Notify** (log only), **Unregister** (remove registration record), or **Strip Roles** (unregister and remove bot-assigned roles). |
+
 ---
 
 ## ⚡ The "Public" vs "Purge" Interaction (Hybrid Server Support)

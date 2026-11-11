@@ -17,6 +17,12 @@ Use `/albion_setup config` to define how registration works.
 *   **Nickname Sync:** Automatically change Discord nicknames to match Albion character names.
 *   **Tag Display:** Customize how [GUILD] and [ALLIANCE] tags appear in nicknames and their display order.
 *   **Purge Behavior:** Clean up/purge users when they leave the whitelisted guild/alliance. Supports private servers (purging non-whitelisted members) and hybrid public servers (preserving guest users while purging leavers).
+*   **Advanced Security Options:**
+    *   **Strip Roles on Unregister:** Immediately remove assigned roles if a member unregisters.
+    *   **Protected Roles:** Protect designated roles from automated purge sweeps.
+    *   **Soft Purge Reset Nick:** Optionally reset member nicknames during soft purges.
+    *   **Blacklist Alert Channel:** Send notifications whenever a blacklisted player or member tries to register or interact.
+    *   **Blacklist Auto Action:** Automatically take action (`notify`, `unregister`, or `strip_roles`) when a blacklisted member is detected.
 
 *Other Setup Commands:*
 *   `/albion_setup show`: Displays the current configuration settings.
@@ -94,6 +100,8 @@ To ensure security and proper management, the bot specifies default permission r
 | `/albion_alliance` | **Manage Roles** | Manages the whitelisted Albion alliances. |
 | `/albion_manage` | **Manage Roles** | Administrative control over registered users. |
 | `/albion_blacklist`| **Manage Roles** | Manages the server-wide blacklist. |
+| `/albion_caps` | **Everyone** | Reference guide and calculator for PvP/PvE Item Power caps and scaling. |
+| `/albion_awakened` | **Everyone** | Pristine weapon awakening costs and attunement calculators. |
 | `/albion_killboard panel`| **Manage Server** | Configures and manages killboard tracking channels and list. |
 | `/party_settings` | **Manage Server** | Configures party recruitment rules, requirements, and live summary channels. |
 | `/party template manage` | **Manage Server** | Clean up and manage server party templates. |

@@ -38,6 +38,8 @@ The control panel features the following buttons for easy management:
 | :--- | :--- | :--- |
 | **`Setup Kills Channel`** | Configure target channel | Sets the Discord channel where automatic kill notifications are posted. |
 | **`Setup Deaths Channel`** | Configure target channel | Sets the Discord channel where automatic death notifications are posted. |
+| **`Clear Kills Channel`** | Reset kills channel | Unsets the kills channel without affecting deaths tracking or tracked entities. |
+| **`Clear Deaths Channel`** | Reset deaths channel | Unsets the deaths channel without affecting kills tracking or tracked entities. |
 | **`Add Tracking`** | Track new entity | Adds a player or guild from a specific region to the tracking list. |
 | **`Remove Tracking`** | Untrack entity | Opens a selector listing tracked entities so you can remove them. |
 | **`Status`** | View settings | Displays the active channels and lists of all tracked entities. |

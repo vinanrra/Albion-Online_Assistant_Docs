@@ -24,13 +24,13 @@ You can choose how aggressive the cleanup should be using `/albion_setup config`
 
 ### 1. Full Purge (Mode: 1)
 This is the "Zero Tolerance" mode. If a user is not in a whitelisted guild/alliance, the bot assumes they should no longer have access to your private areas.
-*   **Discord Action**: Strips **ALL** roles (including the Public/Verified role) and **resets their nickname** to default.
+*   **Discord Action**: Strips **ALL** roles (including the Public/Verified role) and **resets their nickname** to default. Roles listed in **Protected Roles** (`purge_protected_roles`) are safely preserved.
 *   **Database Action**: Deletes their registration record. They must register again if they rejoin a whitelisted guild.
 *   **Best For**: Private competitive guilds and "Hardcore" communities.
 
 ### 2. Soft Purge (Mode: 2)
 This mode is designed for large community servers or alliances that allow "Guest" or "Public" members to stay, but only want to give special roles to active members.
-*   **Discord Action**: Removes only the specific **Guild and Alliance roles** provided by the whitelist. It **KEEPS** the Public role and keeps their nickname as it was.
+*   **Discord Action**: Removes only the specific **Guild and Alliance roles** provided by the whitelist. It **KEEPS** the Public role and keeps their nickname as it was (unless **`soft_purge_reset_nick`** is enabled in Advanced Security settings).
 *   **Database Action**: Retains the registration record.
 *   **Best For**: Open community hubs, coalition servers, and social alliances.
 
